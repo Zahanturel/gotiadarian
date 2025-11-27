@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goti Adarian - Sacred Space for the Parsi-Zoroastrian Community</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .hero-section {
+            position: relative; /* Essential for positioning children */
+            width: 100%;
+            min-height: 100vh; /* Or set a fixed height like 600px */
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(assets/goti.png);
+            background-size: cover;
+            background-position: center;
+            z-index: 1; /* Background should be below everything */
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.3); /* Semi-dark overlay */
+            z-index: 2; /* Above background but below content */
+        }
+
+        .hero-content {
+            position: relative; /* This makes it stack properly */
+            z-index: 3; /* Above both background and overlay */
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: white; /* Ensure text is visible */
+            padding: 2rem; /* Add some spacing */
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <a href="index.html">Goti Adarian</a>
+            </div>
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="pages/about.html" class="nav-link">About</a></li>
+                <li><a href="pages/community.html" class="nav-link">Community</a></li>
+                <li><a href="pages/zoroastrianism.html" class="nav-link">Zoroastrianism</a></li>
+                <li><a href="pages/rituals.html" class="nav-link">Rituals</a></li>
+                <li><a href="pages/trustees.html" class="nav-link">Our Trustees</a></li>
+                <li><a href="pages/donate.html" class="nav-link highlight">Donate</a></li>
+                <li><a href="pages/contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-bg"></div> <!-- Background container -->
+            <div class="hero-overlay"></div>
+            <div class="hero-content container"> <!-- Added container class -->
+                <h1 data-lang="en">The Sacred Fire of Goti Adarian</h1>
+                        <h1 data-lang="gu" style="display: none;">ગોતી અદારિયનની પવિત્ર આગ</h1>
+                        <p data-lang="en">A spiritual sanctuary preserving the ancient wisdom and traditions of the Parsi-Zoroastrian community</p>
+                        <p data-lang="gu" style="display: none;">પારસી-ઝોરોસ્ટ્રિયન સમુદાયની પ્રાચીન શાણપણ અને પરંપરાઓને સાચવતું આધ્યાત્મિક પવિત્રસ્થાન</p>
+                        <div class="hero-buttons">
+                            <a href="pages/rituals.html" class="btn btn-primary btn-lg" data-lang="en">Explore Rituals</a>
+                            <a href="pages/rituals.html" class="btn btn-primary btn-lg" data-lang="gu" style="display: none;">વિધિઓનું અન્વેષણ કરો</a>
+                            <a href="pages/about.html" class="btn btn-secondary btn-lg" data-lang="en">Our History</a>
+                            <a href="pages/about.html" class="btn btn-secondary btn-lg" data-lang="gu" style="display: none;">અમારો ઇતિહાસ</a>
+                            <a href="pages/donate.html" class="btn btn-accent btn-lg" data-lang="en">Support Us</a>
+                            <a href="pages/donate.html" class="btn btn-accent btn-lg" data-lang="gu" style="display: none;">અમને સહાય કરો</a>
+                        </div>
+            </div>
+        </section>
+
+        <!-- Introduction Section -->
+        <section class="intro-section">
+            <div class="container">
+                <div class="intro-grid">
+                    <div class="intro-text">
+                        <h2 data-lang="en">Preserving Ancient Revelations</h2>
+                        <h2 data-lang="gu" style="display: none;">પ્રાચીન શાણપણનું સંરક્ષણ</h2>
+                        <p data-lang="en">
+                            For centuries, the Goti Adarian has stood as a sacred sanctuary where the eternal flame 
+                            burns bright, connecting our community to the profound teachings of Prophet Zarathustra. 
+                            Here, tradition meets modernity, and ancient wisdom guides contemporary life.
+                        </p>
+                        <p data-lang="gu" style="display: none;">
+                            સદીઓથી, ગોતી અદારિયન એક પવિત્ર પવિત્રસ્થાન તરીકે ઊભું છે જ્યાં શાશ્વત જ્યોત તેજસ્વીતાથી બળે છે, 
+                            અમારા સમુદાયને પ્રોફેટ ઝરથુસ્ત્રના ગહન શિક્ષણો સાથે જોડે છે. અહીં, પરંપરા આધુનિકતા સાથે મળે છે, 
+                            અને પ્રાચીન શાણપણ સમકાલીન જીવનનું માર્ગદર્શન કરે છે.
+                        </p>
+                        <p data-lang="en">
+                            Our fire temple serves not just as a place of worship, but as a cultural cornerstone 
+                            that preserves the rich heritage of the Parsi-Zoroastrian community. Through prayer, 
+                            ceremony, and community gathering, we maintain the sacred traditions passed down 
+                            through generations.
+                        </p>
+                        <p data-lang="gu" style="display: none;">
+                            અમારું અગ્નિ મંદિર માત્ર પૂજાના સ્થળ તરીકે જ નહીં, પરંતુ એક સાંસ્કૃતિક આધારશિલા તરીકે સેવા કરે છે 
+                            જે પારસી-ઝોરોસ્ટ્રિયન સમુદાયના સમૃદ્ધ વારસાને સાચવે છે. પ્રાર્થના, વિધિ અને સમુદાયિક મેળાવડા દ્વારા, 
+                            અમે પેઢીઓથી પસાર થતી પવિત્ર પરંપરાઓને જાળવીએ છીએ.
+                        </p>
+                    </div>
+                    <div class="intro-features">
+                        <div class="feature-card">
+                            <i class="fas fa-fire feature-icon"></i>
+                            <h3 data-lang="en">Sacred Fire</h3>
+                            <h3 data-lang="gu" style="display: none;">પવિત્ર આગ</h3>
+                            <p data-lang="en">The eternal flame that has burned for generations, symbolizing purity and divine presence.</p>
+                            <p data-lang="gu" style="display: none;">શાશ્વત જ્યોત જે પેઢીઓથી બળે છે, પવિત્રતા અને દિવ્ય હાજરીનું પ્રતીક છે.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-hands-praying feature-icon"></i>
+                            <h3 data-lang="en">Daily Prayers</h3>
+                            <h3 data-lang="gu" style="display: none;">દૈનિક પ્રાર્થનાઓ</h3>
+                            <p data-lang="en">Regular prayer services conducted in the ancient Avestan Pehlavi language, maintaining our spiritual connection.</p>
+                            <p data-lang="gu" style="display: none;">પ્રાચીન અવેસ્તાન ભાષામાં કરાતી નિયમિત પ્રાર્થના સેવાઓ, અમારા આધ્યાત્મિક જોડાણને જાળવી રાખે છે.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-calendar-days feature-icon"></i>
+                            <h3 data-lang="en">Festival Celebrations</h3>
+                            <h3 data-lang="gu" style="display: none;">ઉત્સવ ઉજવણી</h3>
+                            <p data-lang="en">Community gatherings for traditional festivals that strengthen our cultural bonds.</p>
+                            <p data-lang="gu" style="display: none;">પરંપરાગત ઉત્સવો માટે સમુદાયિક મેળાવડા જે અમારા સાંસ્કૃતિક બંધનોને મજબૂત કરે છે.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Sections Preview -->
+        <section class="section bg-muted">
+            <div class="container">
+                <h2 class="section-title" data-lang="en">Explore Our Heritage</h2>
+                <h2 class="section-title" data-lang="gu" style="display: none;">અમારા વારસાનું અન્વેષણ કરો</h2>
+                
+                <div class="grid grid-cols-3">
+                    <div class="card">
+                        <div class="card-content text-center">
+                            <i class="fas fa-fire feature-icon"></i>
+                            <h3 class="mb-4" data-lang="en">Sacred Traditions</h3>
+                            <h3 class="mb-4" data-lang="gu" style="display: none;">પવિત્ર પરંપરાઓ</h3>
+                            <p class="mb-6" data-lang="en">
+                                Discover the ancient rituals and ceremonies that have been preserved through generations.
+                            </p>
+                            <p class="mb-6" data-lang="gu" style="display: none;">
+                                પેઢીઓથી સાચવાયેલી પ્રાચીન વિધિઓ અને વિધાનોની શોધ કરો.
+                            </p>
+                            <a href="pages/rituals.html" class="btn btn-outline" data-lang="en">Learn About Rituals</a>
+                            <a href="pages/rituals.html" class="btn btn-outline" data-lang="gu" style="display: none;">વિધિઓ વિશે જાણો</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-content text-center">
+                            <i class="fas fa-hands-praying feature-icon"></i>
+                            <h3 class="mb-4" data-lang="en">Spiritual Teachings</h3>
+                            <h3 class="mb-4" data-lang="gu" style="display: none;">આધ્યાત્મિક શિક્ષણો</h3>
+                            <p class="mb-6" data-lang="en">
+                                Explore the philosophy and ethical principles of one of the world's oldest religions.
+                            </p>
+                            <p class="mb-6" data-lang="gu" style="display: none;">
+                                વિશ્વના સૌથી પુરાતન ધર્મોમાંના એકના ફિલસૂફી અને નૈતિક સિદ્ધાંતોનું અન્વેષણ કરો.
+                            </p>
+                            <a href="pages/zoroastrianism.html" class="btn btn-outline" data-lang="en">Explore Beliefs</a>
+                            <a href="pages/zoroastrianism.html" class="btn btn-outline" data-lang="gu" style="display: none;">માન્યતાઓનું અન્વેષણ કરો</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-content text-center">
+                            <i class="fas fa-calendar-days feature-icon"></i>
+                            <h3 class="mb-4" data-lang="en">Community Events</h3>
+                            <h3 class="mb-4" data-lang="gu" style="display: none;">સમુદાયિક કાર્યક્રમો</h3>
+                            <p class="mb-6" data-lang="en">
+                                Join our vibrant community gatherings, festivals, and educational programs.
+                            </p>
+                            <p class="mb-6" data-lang="gu" style="display: none;">
+                                અમારા જીવંત સમુદાયિક મેળાવડા, ઉત્સવો અને શિક્ષણ કાર્યક્રમોમાં જોડાઓ.
+                            </p>
+                            <a href="pages/community.html" class="btn btn-outline" data-lang="en">View Calendar</a>
+                            <a href="pages/community.html" class="btn btn-outline" data-lang="gu" style="display: none;">કેલેન્ડર જુઓ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Call to Action -->
+        <section class="section bg-secondary">
+            <div class="container text-center">
+                <h2 class="mb-6" data-lang="en">Preserve Our Heritage</h2>
+                <h2 class="mb-6" data-lang="gu" style="display: none;">અમારા વારસાને સાચવો</h2>
+                <p class="mb-8" style="font-size: 1.25rem;" data-lang="en">
+                    Help us maintain the sacred fires and traditions of the Parsi-Zoroastrian community for future generations.
+                </p>
+                <p class="mb-8" style="font-size: 1.25rem; display: none;" data-lang="gu">
+                    ભાવી પેઢીઓ માટે પારસી-ઝોરોસ્ટ્રિયન સમુદાયની પવિત્ર આગ અને પરંપરાઓને જાળવવામાં અમારી મદદ કરો.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
+                    <a href="pages/donate.html" class="btn btn-primary btn-lg" data-lang="en">Support Our Mission</a>
+                    <a href="pages/donate.html" class="btn btn-primary btn-lg" data-lang="gu" style="display: none;">અમારા મિશનને સહાય કરો</a>
+                    <a href="pages/contact.html" class="btn btn-outline btn-lg" style="border-color: var(--secondary-foreground); color: var(--secondary-foreground);" data-lang="en">Get Involved</a>
+                    <a href="pages/contact.html" class="btn btn-outline btn-lg" style="border-color: var(--secondary-foreground); color: var(--secondary-foreground); display: none;" data-lang="gu">સામેલ થાઓ</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonial -->
+        <section class="section">
+            <div class="container text-center">
+                <div class="faravahar-divider">
+                    <div class="divider-icon">
+                        <img src="assets/faravahar.png" alt="Faravahar symbol">
+                    </div>
+                </div>
+                <blockquote class="mb-6" style="font-size: 1.25rem; font-style: italic; color: var(--secondary);">
+                    "The Goti Adarian has been the spiritual center of our community for generations. 
+                    It represents not just our past, but our commitment to preserving these sacred traditions 
+                    for the future."
+                </blockquote>
+                <p style="color: var(--primary); font-weight: 600;">— Khojeste Mistree, Religious Scholar</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Goti Adarian</h4>
+                    <p>Preserving the sacred fire and ancient wisdom of the Parsi-Zoroastrian tradition for future generations.</p>
+                    <div class="footer-address">
+                        <p><strong>Address:</strong></p>
+                        <address>
+                            <a href="https://www.google.com/maps/search/?api=1&query=7%2F1381%2C+6R4C%2BMGF%2C+Variyavi+Bhagol%2C+Variali+Bazar%2C+Dhastipura%2C+Surat%2C+Gujarat+395003" target="_blank" rel="noopener noreferrer">
+                                Goti Adarian Temple<br>
+                                7/1381, 6R4C+MGF, Variyavi Bhagol<br>
+                                Variali Bazar, Dhastipura<br>
+                                Surat, Gujarat 395003<br>
+                                India
+                            </a>
+                        </address>
+                        <p><strong>Phone:</strong></p>
+                        <p>
+                            <a href="tel:+917573013336">+91 7573013336</a><br>
+                            Alternative: +91 9727760344 / +91 7573013330
+                        </p>
+                    </div>
+                    <div class="footer-logo">
+                        <img src="assets/faravahar.png" alt="Faravahar symbol">
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pages/about.html">About</a></li>
+                        <li><a href="pages/community.html">Community</a></li>
+                        <li><a href="pages/zoroastrianism.html">Zoroastrianism</a></li>
+                        <li><a href="pages/rituals.html">Rituals</a></li>
+                        <li><a href="pages/education.html">Education</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources & Visit Us</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Prayer Schedule</a></li>
+                        <li><a href="#">Festival Calendar</a></li>
+                        <li><a href="#">Scholarly Articles</a></li>
+                        <li><a href="#">Community Directory</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                    
+                    <div class="footer-hours">
+                        <p><strong>Opening Hours:</strong></p>
+                        <p><strong>Open 24 hours a day</strong></p>
+                        <p>7 days a week</p>
+                        <p>365 days a year</p>
+                        <p><em>Always available for the community</em></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faravahar-divider">
+                <div class="divider-icon">
+                    <img src="assets/faravahar.png" alt="Faravahar symbol">
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Goti Adarian. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Accessibility</a>
+                </div>
+                <div class="footer-cta">
+                    <a href="tel:+917573013336" class="btn btn-phone">
+                        <i class="fas fa-phone"></i>
+                        Call +91 7573013336
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

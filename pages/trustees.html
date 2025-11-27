@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Trustees - Goti Adarian</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .trustee-card {
+            background: var(--card);
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+        
+        .trustee-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+        }
+        
+        .trustee-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1.5rem;
+            border: 4px solid var(--primary);
+        }
+        
+        .trustee-placeholder {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--muted) 0%, var(--border) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            border: 4px solid var(--primary);
+        }
+        
+        .trustee-placeholder i {
+            font-size: 5rem;
+            color: var(--primary);
+            opacity: 0.4;
+        }
+        
+        .trustee-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .trustee-role {
+            font-size: 1rem;
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .special-section {
+            background: linear-gradient(135deg, #2d4a5a 0%, #1a2d38 100%);
+            color: white;
+            padding: 3rem 0;
+            border-radius: var(--radius);
+            margin-top: 3rem;
+        }
+        
+        .special-section h3 {
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <a href="../index.html">Goti Adarian</a>
+            </div>
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="community.html" class="nav-link">Community</a></li>
+                <li><a href="zoroastrianism.html" class="nav-link">Zoroastrianism</a></li>
+                <li><a href="rituals.html" class="nav-link">Rituals</a></li>
+                <li><a href="trustees.html" class="nav-link active">Our Trustees</a></li>
+                <li><a href="donate.html" class="nav-link highlight">Donate</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Header -->
+        <section class="section bg-muted">
+            <div class="container text-center">
+                <h1 class="section-title">Our Trustees</h1>
+                <p style="font-size: 1.25rem; max-width: 800px; margin: 0 auto;">
+                    Meet the dedicated individuals who guide and preserve the sacred traditions of Shri Pak Goti Adarian Saheb, 
+                    ensuring our heritage continues for future generations.
+                </p>
+            </div>
+        </section>
+
+        <!-- Board of Trustees -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Board of Trustees</h2>
+                <p class="text-center mb-6" style="max-width: 800px; margin: 0 auto 2rem;">
+                    The temple's trustees have included respected families such as the Modi, Wadia, Palia, Bhacca, and Dotiwala families, 
+                    who have served with dedication and devotion for generations.
+                </p>
+                
+                <div class="grid grid-cols-3" style="gap: 2rem;">
+                    <!-- Trustee 1: Tehmuras Modi -->
+                    <div class="trustee-card">
+                        <img src="../images/trustees/tehmuras-modi.png" alt="Tehmuras Modi" class="trustee-photo">
+                        <h3 class="trustee-name">Tehmuras Modi</h3>
+                        <p class="trustee-role">President</p>
+                        <p style="color: var(--muted-foreground); line-height: 1.6;">
+                            A devoted member of the Modi family, committed to upholding the sacred traditions and 
+                            ensuring the temple's continued spiritual service to the community.
+                        </p>
+                    </div>
+
+                    <!-- Trustee 2: Ryan Modi -->
+                    <div class="trustee-card">
+                        <img src="../images/trustees/ryan-modi.jpg" alt="Ryan Modi" class="trustee-photo">
+                        <h3 class="trustee-name">Ryan Modi</h3>
+                        <p class="trustee-role">Trustee</p>
+                        <p style="color: var(--muted-foreground); line-height: 1.6;">
+                            A dedicated young member of the Modi family, bringing fresh perspective while 
+                            honoring the sacred traditions of our temple.
+                        </p>
+                    </div>
+
+                    <!-- Trustee 3: Zawareh Wadia -->
+                    <div class="trustee-card">
+                        <img src="../images/trustees/zawareh-wadia.png" alt="Zawareh Wadia" class="trustee-photo">
+                        <h3 class="trustee-name">Zawareh Wadia</h3>
+                        <p class="trustee-role">Managing Trustee</p>
+                        <p style="color: var(--muted-foreground); line-height: 1.6;">
+                            Representing the esteemed Wadia family, dedicated to preserving the rich heritage 
+                            and maintaining the sacred fire for future generations.
+                        </p>
+                    </div>
+
+                    <!-- Trustee 4: Dr. Sarosh Bhacca -->
+                    <div class="trustee-card">
+                        <img src="../images/trustees/sarosh-bhacca.jpg" alt="Dr. Sarosh Bhacca" class="trustee-photo">
+                        <h3 class="trustee-name">Dr. Sarosh Bhacca</h3>
+                        <p class="trustee-role">Trustee</p>
+                        <p style="color: var(--muted-foreground); line-height: 1.6;">
+                            A distinguished member of the Bhacca family, bringing wisdom and dedication to 
+                            the stewardship of our sacred temple.
+                        </p>
+                    </div>
+
+                    <!-- Trustee 5: Gul Palia -->
+                    <div class="trustee-card">
+                        <img src="../images/trustees/gul-palia.png" alt="Gul Palia" class="trustee-photo">
+                        <h3 class="trustee-name">Gul Palia</h3>
+                        <p class="trustee-role">Trustee</p>
+                        <p style="color: var(--muted-foreground); line-height: 1.6;">
+                            Representing the Palia family's longstanding commitment to the temple's welfare 
+                            and the preservation of Zoroastrian traditions.
+                        </p>
+                    </div>
+
+                    <!-- Trustee 6: Yasmin Dotiwala -->
+                    <div class="trustee-card">
+                        <img src="../images/trustees/yasmin-dotiwala.jpg" alt="Yasmin Dotiwala" class="trustee-photo">
+                        <h3 class="trustee-name">Yasmin Dotiwala</h3>
+                        <p class="trustee-role">Trustee</p>
+                        <p style="color: var(--muted-foreground); line-height: 1.6;">
+                            A devoted trustee from the Dotiwala family, working tirelessly to ensure the 
+                            continuity of our sacred rituals and community programs.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Panthaky Section -->
+        <section class="section bg-muted">
+            <div class="container">
+                <h2 class="section-title">Our Panthaky</h2>
+                <div class="card" style="max-width: 900px; margin: 0 auto;">
+                    <div class="card-content">
+                        <div class="grid grid-cols-2" style="align-items: center; gap: 3rem;">
+                            <img src="../images/trustees/panthaky-meherzad-turel.jpg" alt="Er. Meherzad Turel - Panthaky" class="trustee-photo" style="width: 250px; height: 250px;">
+                            <div>
+                                <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--primary); margin-bottom: 0.5rem;">
+                                    Er. Meherzad Turel
+                                </h3>
+                                <p style="font-size: 1.1rem; color: var(--secondary); font-weight: 600; margin-bottom: 1.5rem;">
+                                    Panthaky
+                                </p>
+                                <p style="margin-bottom: 1rem; line-height: 1.7;">
+                                    The Turel family (originally known as "Velati") has served as the Panthakis (priests and caretakers) 
+                                    of the Adariyan for <strong>eight generations</strong>. Their dedication—especially during floods, 
+                                    when they protected and relocated the sacred fire to safety—has been recorded with reverence.
+                                </p>
+                                <p style="line-height: 1.7;">
+                                    The family's lineage of priests includes Ervad Rustamji, Ervad Jamasji, Ervad Khurshedji, 
+                                    Ervad Dadabhai, Ervad Dorabji, Ervad Nariman, Ervad Jamshedji, and Ervad Parvez. 
+                                    This spiritual service continues to the present day under the guidance 
+                                    of Er. Meherzad Turel, who maintains the ancient traditions with devotion and care.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="section bg-secondary">
+            <div class="container text-center">
+                <div class="faravahar-divider">
+                    <div class="divider-icon">
+                        <img src="../assets/faravahar.png" alt="Faravahar symbol">
+                    </div>
+                </div>
+                <h2 class="mb-6">Support Our Sacred Mission</h2>
+                <p class="mb-8" style="font-size: 1.25rem;">
+                    Help our trustees preserve the sacred fire and ancient traditions for future generations.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
+                    <a href="donate.html" class="btn btn-primary btn-lg">Make a Donation</a>
+                    <a href="contact.html" class="btn btn-outline btn-lg" style="border-color: var(--secondary-foreground); color: var(--secondary-foreground);">Get in Touch</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Goti Adarian</h4>
+                    <p>Preserving the sacred fire and ancient wisdom of the Parsi-Zoroastrian tradition for future generations.</p>
+                    <div class="footer-address">
+                        <p><strong>Address:</strong></p>
+                        <address>
+                            <a href="https://www.google.com/maps/search/?api=1&query=7%2F1381%2C+6R4C%2BMGF%2C+Variyavi+Bhagol%2C+Variali+Bazar%2C+Dhastipura%2C+Surat%2C+Gujarat+395003" target="_blank" rel="noopener noreferrer">
+                                Goti Adarian Temple<br>
+                                7/1381, 6R4C+MGF, Variyavi Bhagol<br>
+                                Variali Bazar, Dhastipura<br>
+                                Surat, Gujarat 395003<br>
+                                India
+                            </a>
+                        </address>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="community.html">Community</a></li>
+                        <li><a href="rituals.html">Rituals</a></li>
+                        <li><a href="trustees.html">Our Trustees</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+917573013336">+91 7573013336</a></li>
+                        <li><i class="fas fa-phone"></i> +91 9727760344</li>
+                        <li><i class="fas fa-phone"></i> +91 7573013330</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support Us</h4>
+                    <p>Help preserve our sacred heritage</p>
+                    <a href="donate.html" class="btn btn-primary">Donate Now</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Goti Adarian. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

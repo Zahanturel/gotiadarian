@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Goti Adarian</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <a href="../index.html">Goti Adarian</a>
+            </div>
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="community.html" class="nav-link">Community</a></li>
+                <li><a href="zoroastrianism.html" class="nav-link">Zoroastrianism</a></li>
+                <li><a href="rituals.html" class="nav-link">Rituals</a></li>
+                <li><a href="trustees.html" class="nav-link">Our Trustees</a></li>
+                <li><a href="donate.html" class="nav-link highlight">Donate</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Header -->
+        <section class="section bg-muted">
+            <div class="container text-center">
+                <h1 class="section-title">Visit Us</h1>
+                <p style="font-size: 1.25rem; max-width: 800px; margin: 0 auto;">
+                    We welcome you to our sacred space. Whether you're seeking spiritual guidance, 
+                    cultural connection, or simply wish to learn more about our traditions, we're here to help.
+                </p>
+            </div>
+        </section>
+
+        <!-- Contact Content -->
+        <section class="section">
+            <div class="container">
+                <div class="grid grid-cols-2">
+                    <div>
+                        <div class="contact-card">
+                            <h3><i class="fas fa-map-marker-alt"></i> Address</h3>
+                            <address>
+                                <a href="https://www.google.com/maps/search/?api=1&query=7%2F1381%2C+6R4C%2BMGF%2C+Variyavi+Bhagol%2C+Variali+Bazar%2C+Dhastipura%2C+Surat%2C+Gujarat+395003" target="_blank" rel="noopener noreferrer">
+                                    Goti Adarian Temple<br>
+                                    7/1381, 6R4C+MGF, Variyavi Bhagol<br>
+                                    Variali Bazar, Dhastipura<br>
+                                    Surat, Gujarat 395003<br>
+                                    India
+                                </a>
+                            </address>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <h3><i class="fas fa-phone"></i> Phone</h3>
+                            <p>
+                                <a href="tel:+917573013336">+91 7573013336</a><br>
+                                Alternative: +91 9727760344 / +91 7573013330
+                            </p>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <h3><i class="fas fa-clock"></i> Opening Hours</h3>
+                            <p>
+                                <strong>Open 24 hours a day</strong><br>
+                                7 days a week<br>
+                                365 days a year<br>
+                                <em>Always available for the community</em>
+                            </p>
+                        </div>
+
+                        <div class="contact-card">
+                            <h3><i class="fas fa-info-circle"></i> Visiting Guidelines</h3>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                                    <i class="fas fa-check-circle" style="color: var(--primary);"></i>
+                                    <span>Remove shoes before entering prayer areas</span>
+                                </li>
+                                <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                                    <i class="fas fa-check-circle" style="color: var(--primary);"></i>
+                                    <span>Dress modestly and respectfully</span>
+                                </li>
+                                <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                                    <i class="fas fa-check-circle" style="color: var(--primary);"></i>
+                                    <span>Maintain silence during prayers</span>
+                                </li>
+                                <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                                    <i class="fas fa-check-circle" style="color: var(--primary);"></i>
+                                    <span>Follow guidance from priests and volunteers</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div style="background-color: var(--card); padding: 2rem; border-radius: var(--radius); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                            <h3 class="mb-6">Send us a Message</h3>
+                            <form id="contactForm">
+                                <div class="form-group">
+                                    <label for="contactName">Name</label>
+                                    <input type="text" id="contactName" name="name" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contactEmail">Email</label>
+                                    <input type="email" id="contactEmail" name="email" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contactSubject">Subject</label>
+                                    <input type="text" id="contactSubject" name="subject" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contactMessage">Message</label>
+                                    <textarea id="contactMessage" name="message" rows="5" required></textarea>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section class="section bg-muted">
+            <div class="container">
+                <h2 class="section-title">How We Can Help</h2>
+                <div class="grid grid-cols-3">
+                    <div class="card">
+                        <div class="card-content text-center">
+                            <i class="fas fa-pray feature-icon"></i>
+                            <h3 class="mb-4">Spiritual Guidance</h3>
+                            <p class="mb-4">
+                                Our priests and spiritual advisors are available to provide guidance 
+                                on religious matters, prayer practices, and spiritual development.
+                            </p>
+                            <ul style="list-style: disc; padding-left: 1.5rem; font-size: 0.9rem; text-align: left;">
+                                <li>Personal spiritual counseling</li>
+                                <li>Prayer instruction and guidance</li>
+                                <li>Religious education support</li>
+                                <li>Life event ceremonies</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-content text-center">
+                            <i class="fas fa-calendar-alt feature-icon"></i>
+                            <h3 class="mb-4">Ceremony Planning</h3>
+                            <p class="mb-4">
+                                We assist in planning and conducting traditional Zoroastrian 
+                                ceremonies for all of life's important milestones.
+                            </p>
+                            <ul style="list-style: disc; padding-left: 1.5rem; font-size: 0.9rem; text-align: left;">
+                                <li>Navjote (initiation) ceremonies</li>
+                                <li>Wedding ceremonies</li>
+                                <li>Memorial services</li>
+                                <li>Jashan (thanksgiving) rituals</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-content text-center">
+                            <i class="fas fa-users feature-icon"></i>
+                            <h3 class="mb-4">Community Support</h3>
+                            <p class="mb-4">
+                                Our community programs provide support for members facing 
+                                various challenges and help strengthen community bonds.
+                            </p>
+                            <ul style="list-style: disc; padding-left: 1.5rem; font-size: 0.9rem; text-align: left;">
+                                <li>Family counseling services</li>
+                                <li>Educational program enrollment</li>
+                                <li>Community event coordination</li>
+                                <li>Volunteer opportunities</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="grid grid-cols-2">
+                    <div>
+                        <div style="margin-bottom: 2rem;">
+                            <h4 style="color: var(--primary); margin-bottom: 1rem;">Can non-Zoroastrians visit the temple?</h4>
+                            <p style="font-size: 0.9rem;">
+                                No, entry into the temple is reserved for members of the Zoroastrian faith only. 
+                                We kindly ask non-Zoroastrian visitors to respect this tradition. However, we welcome those interested in learning more about our religion and are happy to arrange informational sessions or guided tours of the surrounding premises upon request.
+                            </p>
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <h4 style="color: var(--primary); margin-bottom: 1rem;">How do I schedule a ceremony?</h4>
+                            <p style="font-size: 0.9rem;">
+                                Please contact our temple office at least 2-3 weeks in advance to schedule ceremonies. 
+                                Our priests will guide you through the preparation process.
+                            </p>
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <h4 style="color: var(--primary); margin-bottom: 1rem;">Are there parking facilities available?</h4>
+                            <p style="font-size: 0.9rem;">
+                                Yes, we have designated parking areas for visitors. During major festivals, 
+                                additional parking arrangements are made nearby.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div style="margin-bottom: 2rem;">
+                            <h4 style="color: var(--primary); margin-bottom: 1rem;">What should I bring for prayers?</h4>
+                            <p style="font-size: 0.9rem;">
+                                No special items are required for general prayers. For specific ceremonies, 
+                                our priests will provide a list of required offerings and materials.
+                            </p>
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <h4 style="color: var(--primary); margin-bottom: 1rem;">How can I join educational programs?</h4>
+                            <p style="font-size: 0.9rem;">
+                                Contact our education coordinator to learn about current programs and enrollment. 
+                                We offer classes for all ages and levels of experience.
+                            </p>
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <h4 style="color: var(--primary); margin-bottom: 1rem;">Is there assistance for those in need?</h4>
+                            <p style="font-size: 0.9rem;">
+                                Yes, we provide various forms of community support. Please speak with our 
+                                community service coordinator confidentially about available assistance.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map and Directions -->
+        <section class="section bg-muted">
+            <div class="container">
+                <h2 class="section-title">Location & Directions</h2>
+                <div class="grid grid-cols-2">
+                    <div>
+                        <h3 class="mb-4">Getting Here</h3>
+                        <div style="margin-bottom: 2rem;">
+                            <h4 style="color: var(--primary); margin-bottom: 1rem;">By Public Transport</h4>
+                            <ul style="list-style: disc; padding-left: 1.5rem; font-size: 0.9rem;">
+                                <li>Take local bus to Variali Bazar stop</li>
+                                <li>Auto-rickshaws available from railway station</li>
+                                <li>City bus route 12 stops nearby</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <h4 style="color: var(--primary); margin-bottom: 1rem;">By Car</h4>
+                            <ul style="list-style: disc; padding-left: 1.5rem; font-size: 0.9rem;">
+                                <li>Located in Dhastipura area of Surat</li>
+                                <li>GPS coordinates: 21.2056, 72.8208</li>
+                                <li>Parking available on-site</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 style="color: var(--primary); margin-bottom: 1rem;">Landmarks</h4>
+                            <ul style="list-style: disc; padding-left: 1.5rem; font-size: 0.9rem;">
+                                <li>Near Variyavi Bhagol market</li>
+                                <li>Walking distance from Dhastipura center</li>
+                                <li>Palia Ground</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div style="background: linear-gradient(135deg, var(--muted), var(--background)); height: 300px; border-radius: var(--radius); display: flex; align-items: center; justify-content: center; margin-bottom: 2rem; border: 2px solid var(--border);">
+                            <div style="text-align: center; color: var(--muted-foreground);">
+                                <i class="fas fa-map-marker-alt" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                                <p><strong>Interactive Map</strong></p>
+                                <p style="font-size: 0.9rem;">Click the address above to open in Google Maps</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-content">
+                                <h4 style="color: var(--primary); margin-bottom: 1rem;">Need Directions?</h4>
+                                <p style="font-size: 0.9rem; margin-bottom: 1rem;">
+                                    Our volunteers can provide detailed directions and assist with transportation 
+                                    arrangements for special events or ceremonies.
+                                </p>
+                                <a href="tel:+917573013336" class="btn btn-outline">
+                                    <i class="fas fa-phone"></i>
+                                    Call for Directions
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="section bg-secondary">
+            <div class="container text-center">
+                <div class="faravahar-divider">
+                    <div class="divider-icon">
+                        <img src="../assets/faravahar.png" alt="Faravahar symbol">
+                    </div>
+                </div>
+                <h2 class="mb-6">We Look Forward to Welcoming You</h2>
+                <p class="mb-8" style="font-size: 1.25rem;">
+                    Whether you're visiting for the first time or returning home, 
+                    our doors are always open to those seeking spiritual connection and community.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
+                    <a href="tel:+917573013336" class="btn btn-primary btn-lg">
+                        <i class="fas fa-phone"></i>
+                        Call Us Today
+                    </a>
+                    <a href="community.html" class="btn btn-outline btn-lg" style="border-color: var(--secondary-foreground); color: var(--secondary-foreground);">
+                        Join Our Community
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Goti Adarian</h4>
+                    <p>Preserving the sacred fire and ancient wisdom of the Parsi-Zoroastrian tradition for future generations.</p>
+                    <div class="footer-address">
+                        <p><strong>Address:</strong></p>
+                        <address>
+                            <a href="https://www.google.com/maps/search/?api=1&query=7%2F1381%2C+6R4C%2BMGF%2C+Variyavi+Bhagol%2C+Variali+Bazar%2C+Dhastipura%2C+Surat%2C+Gujarat+395003" target="_blank" rel="noopener noreferrer">
+                                Goti Adarian Temple<br>
+                                7/1381, 6R4C+MGF, Variyavi Bhagol<br>
+                                Variali Bazar, Dhastipura<br>
+                                Surat, Gujarat 395003<br>
+                                India
+                            </a>
+                        </address>
+                        <p><strong>Phone:</strong></p>
+                        <p>
+                            <a href="tel:+917573013336">+91 7573013336</a><br>
+                            Alternative: +91 9727760344 / +91 7573013330
+                        </p>
+                    </div>
+                    <div class="footer-logo">
+                        <img src="../assets/faravahar.png" alt="Faravahar symbol">
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="community.html">Community</a></li>
+                        <li><a href="zoroastrianism.html">Zoroastrianism</a></li>
+                        <li><a href="rituals.html">Rituals</a></li>
+                        <li><a href="education.html">Education</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources & Visit Us</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Prayer Schedule</a></li>
+                        <li><a href="#">Festival Calendar</a></li>
+                        <li><a href="#">Scholarly Articles</a></li>
+                        <li><a href="#">Community Directory</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                    
+                    <div class="footer-hours">
+                        <p><strong>Opening Hours:</strong></p>
+                        <p><strong>Open 24 hours a day</strong></p>
+                        <p>7 days a week</p>
+                        <p>365 days a year</p>
+                        <p><em>Always available for the community</em></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faravahar-divider">
+                <div class="divider-icon">
+                    <img src="../assets/faravahar.png" alt="Faravahar symbol">
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Goti Adarian. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Accessibility</a>
+                </div>
+                <div class="footer-cta">
+                    <a href="tel:+917573013336" class="btn btn-phone">
+                        <i class="fas fa-phone"></i>
+                        Call +91 7573013336
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
