@@ -427,7 +427,31 @@
             </div>
         </div>
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+    (function(){
+        emailjs.init("IAUaPbKDJE16ojHgY");
+    })();
+    </script>
+    <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+    
+        emailjs.send("service_cjdxpve", "template_9pw3wrg", {
+            name: document.getElementById("contactName").value,
+            email: document.getElementById("contactEmail").value,
+            subject: document.getElementById("contactSubject").value,
+            message: document.getElementById("contactMessage").value
+        })
+        .then(function() {
+            alert("Message sent successfully!");
+            document.getElementById("contactForm").reset();
+        }, function(error) {
+            alert("Failed to send message. Please try again.");
+            console.error(error);
+        });
+    });
+    </script>
     <script src="../js/main.js"></script>
 </body>
 </html>
