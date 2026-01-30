@@ -1,10 +1,10 @@
 // Main JavaScript functionality for Goti Adarian website
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all components
     initNavigation();
     initHeroSlider();
-    initForms();
+    initDonationForm();       // ✅ keep donation logic
+    // initContactForm();     // ❌ disable contact form JS
     initAnimations();
     initSmoothScrolling();
     updateActiveNavigation();
@@ -90,7 +90,7 @@ function initHeroSlider() {
 // Form functionality
 function initForms() {
     initDonationForm();
-    initContactForm();
+    //initContactForm();
 }
 
 function initDonationForm() {
