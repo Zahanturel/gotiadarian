@@ -4,554 +4,155 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donate - Goti Adarian</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <link rel="stylesheet" href="../css/styles.css">
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </head>
+
 <body class="donate-page">
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-brand">
-                <a href="../index.html">Goti Adarian</a>
-            </div>
-            <button class="nav-toggle" id="navToggle">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="../index.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="community.html" class="nav-link">Community</a></li>
-                <li><a href="zoroastrianism.html" class="nav-link">Zoroastrianism</a></li>
-                <li><a href="rituals.html" class="nav-link">Rituals</a></li>
-                <li><a href="trustees.html" class="nav-link">Our Trustees</a></li>
-                <li><a href="donate.html" class="nav-link highlight active">Donate</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Donate Hero -->
-        <section class="donate-hero">
-            <div class="container">
-                <h1 data-lang="en">Support Our Mission</h1>
-                <h1 data-lang="gu" style="display: none;">અમારા મિશનને સહાય કરો</h1>
-                <p style="font-size: 1.25rem; max-width: 800px; margin: 0 auto;" data-lang="en">
-                    Help us preserve the sacred fire and ancient traditions of the Parsi-Zoroastrian community for future generations.
-                </p>
-                <p style="font-size: 1.25rem; max-width: 800px; margin: 0 auto; display: none;" data-lang="gu">
-                    ભાવી પેઢીઓ માટે પારસી-ઝોરોસ્ટ્રિયન સમુદાયની પવિત્ર આગ અને પ્રાચીન પરંપરાઓને સાચવવામાં અમારી મદદ કરો.
-                </p>
-            </div>
-        </section>
+<!-- Header -->
+<header class="header">
+    <nav class="nav">
+        <div class="nav-brand">
+            <a href="../index.html">Goti Adarian</a>
+        </div>
+        <button class="nav-toggle" id="navToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="../index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="community.html" class="nav-link">Community</a></li>
+            <li><a href="zoroastrianism.html" class="nav-link">Zoroastrianism</a></li>
+            <li><a href="rituals.html" class="nav-link">Rituals</a></li>
+            <li><a href="trustees.html" class="nav-link">Our Trustees</a></li>
+            <li><a href="donate.html" class="nav-link highlight active">Donate</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-        <!-- Donate Content -->
-        <section class="donate-content">
-            <div class="container">
-                <div class="donate-info">
-                    <h3 data-lang="en">Help Preserve Our Heritage</h3>
-                    <h3 data-lang="gu" style="display: none;">અમારા વારસાને સાચવવામાં મદદ કરો</h3>
-                    <p data-lang="en">Your generous contributions help us maintain the sacred fire, preserve our cultural traditions, and support community programs that keep our heritage alive for future generations.</p>
-                    <p data-lang="gu" style="display: none;">તમારા ઉદાર યોગદાનથી અમને પવિત્ર આગ જળાવતા રાખવામાં, અમારી સાંસ્કૃતિક પરંપરાઓ સાચવવામાં અને ભાવી પેઢીઓ માટે અમારા વારસાને જીવંત રાખતા સમુદાયિક કાર્યક્રમોને સહાય કરવામાં મદદ મળે છે.</p>
-                    
-                    <div class="donation-uses">
-                        <h4 data-lang="en">How Your Donation Helps:</h4>
-                        <h4 data-lang="gu" style="display: none;">તમારું દાન કેવી રીતે મદદ કરે છે:</h4>
-                        <ul data-lang="en">
-                            <li><i class="fas fa-fire"></i> Maintaining the sacred fire and temple facilities.</li>
-                            <li><i class="fas fa-book"></i>  Provides sandalwood and fuel to keep the sacred fire burning continuously.</li>
-                            <li><i class="fas fa-users"></i> Supports the priests' welfare, training, and ritual duties.</li>
-                        </ul>
-                        <ul data-lang="gu" style="display: none;">
-                            <li><i class="fas fa-fire"></i> પવિત્ર આગ અને મંદિરની સુવિધાઓનું જાળવણી</li>
-                            <li><i class="fas fa-book"></i> પવિત્ર અગ્નિને સતત ચાલુ રાખવા માટેની ચંદન કાઠી અને ઈંધણ પૂરુ પાડે છે</li>
-                            <li><i class="fas fa-users"></i> મોબેદના કલ્યાણ, તાલીમ અને ધાર્મિક કર્તવ્યો માટે સહાય કરે છે</li>
-                        </ul>
-                    </div>
-                    
-                    <div style="margin-top: 2rem; padding: 1.5rem; background-color: rgba(255, 255, 255, 0.1); border-radius: var(--radius);">
-                        <h4 style="color: var(--primary); margin-bottom: 1rem;">Ways to Give</h4>
-                        <ul style="list-style: none; padding: 0;">
-                            <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem;">
-                                <i class="fas fa-credit-card" style="color: var(--primary);"></i>
-                                <span>Online donation through secure payment gateway</span>
-                            </li>
-                            <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem;">
-                                <i class="fas fa-university" style="color: var(--primary);"></i>
-                                <span>Bank transfer to our temple account</span>
-                            </li>
-                            <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem;">
-                                <i class="fas fa-handshake" style="color: var(--primary);"></i>
-                                <span>In-person donations at the temple</span>
-                            </li>
-                            <li style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem;">
-                                <i class="fas fa-repeat" style="color: var(--primary);"></i>
-                                <span>Monthly recurring donations for sustained support</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="donate-form-container">
-                    <form class="donate-form" id="donateForm" data-lang="en">
-                        <div class="form-group">
-                            <label for="donorName">Full Name</label>
-                            <input type="text" id="donorName" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="donorEmail">Email Address</label>
-                            <input type="email" id="donorEmail" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="donorEmail">Residential Address</label>
-                            <input type="textarea" id="addr" name="addr" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Donation Amount</label>
-                            <div class="amount-buttons">
-                                <button type="button" class="amount-btn" data-amount="20">₹20</button>
-                                <button type="button" class="amount-btn" data-amount="100">₹100</button>
-                                <button type="button" class="amount-btn" data-amount="500">₹500</button>
-                                <button type="button" class="amount-btn" data-amount="2000">₹2000</button>
-                            </div>
-                            <input type="number" id="customAmount" name="amount" placeholder="Other Amount (₹)" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="donationPurpose">Purpose of Donation</label>
-                            <select id="donationPurpose" name="purpose" required>
-                                <option value="">Select Purpose</option>
-                                <option value="temple">Temple Maintenance</option>
-                                <option value="kathi">Kathi Fund</option>
-                                <option value="mobed">Mobed Fund</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="donorPAN">PAN Number</label>
-                            <input type="text" id="donorPAN" name="pan" pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" placeholder="ABCDE1234F" style="text-transform: uppercase;" required>
-                        </div>
-                        
-                        <div class="form-group checkbox-group">
-                            <input type="checkbox" id="recurring" name="recurring">
-                            <label for="recurring">I would like to make this a monthly recurring donation</label>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary btn-full">Proceed to Payment</button>
-                    </form>
-                    
-                    <form class="donate-form" id="donateFormGu" data-lang="gu" style="display: none;">
-                        <div class="form-group">
-                            <label for="donorNameGu">પૂરું નામ</label>
-                            <input type="text" id="donorNameGu" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="donorEmailGu">ઇમેઇલ સરનામું</label>
-                            <input type="email" id="donorEmailGu" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>દાનની રકમ</label>
-                            <div class="amount-buttons">
-                                <button type="button" class="amount-btn" data-amount="20">₹20</button>
-                                <button type="button" class="amount-btn" data-amount="100">₹100</button>
-                                <button type="button" class="amount-btn" data-amount="500">₹500</button>
-                                <button type="button" class="amount-btn" data-amount="2000">₹2000</button>
-                            </div>
-                            <input type="number" id="customAmountGu" name="amount" placeholder="અન્ય રકમ (₹)" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="donationPurposeGu">દાનનો હેતુ</label>
-                            <select id="donationPurposeGu" name="purpose" required>
-                                <option value="">હેતુ પસંદ કરો</option>
-                                <option value="temple">આદરિયાનની જાળવણી</option>
-                                <option value="kathi">કાઠી ફંડ</option>
-                                <option value="mobed">મોબેદ ફંડ</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="donorPANGu">PAN નંબર <span id="panRequiredGu" style="color: #e74c3c; display: none;">(₹10,000 થી વધુ દાન માટે જરૂરી)</span></label>
-                            <input type="text" id="donorPANGu" name="pan" pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" placeholder="ABCDE1234F" style="text-transform: uppercase;">
-                            <small style="color: var(--muted-foreground);">₹10,000 હેઠળના દાન માટે વૈકલ્પિક</small>
-                        </div>
-                        
-                        <div class="form-group checkbox-group">
-                            <input type="checkbox" id="recurringGu" name="recurring">
-                            <label for="recurringGu">હું આ માસિક વારંવાર દાન કરવા માંગું છું</label>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary btn-full">ચુકવણી પર આગળ વધો</button>
-                    </form>
-                </div>
-            </div>
-        </section>
+<main>
 
-        <!-- Bank Account Details -->
-        <section style="padding: 4rem 0; background-color: rgba(255, 255, 255, 0.1);">
+<!-- Donate Hero -->
+<section class="donate-hero">
     <div class="container">
-        <h2 style="text-align: center; margin-bottom: 3rem; color: var(--accent-foreground);">
+        <h1>Support Our Mission</h1>
+        <p style="font-size:1.25rem; max-width:800px; margin:0 auto;">
+            Help us preserve the sacred fire and ancient traditions of the
+            Parsi-Zoroastrian community for future generations.
+        </p>
+    </div>
+</section>
+
+<!-- Bank Transfer Details (TOP) -->
+<section style="padding:4rem 0; background-color:rgba(255,255,255,0.1);">
+    <div class="container">
+        <h2 style="text-align:center; margin-bottom:3rem;">
             Bank Transfer Details
         </h2>
 
-        <div style="max-width: 600px; margin: 0 auto; background-color: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: var(--radius);">
-            <p style="text-align: center; color: var(--accent-foreground); margin-bottom: 1.5rem;">
-                For direct bank transfers, please use the following details:
+        <div style="max-width:600px; margin:0 auto; background-color:rgba(255,255,255,0.1); padding:2rem; border-radius:var(--radius);">
+            <p style="text-align:center; margin-bottom:1.5rem;">
+                Please use the following details for donations via bank transfer
             </p>
-            <div style="display: grid; gap: 1rem;">
-                <div style="display: flex; justify-content: space-between; padding: 0.75rem; background-color: rgba(255,255,255,0.1); border-radius: 4px;">
-                    <strong style="color: var(--primary);">Account Name:</strong>
-                    <span style="color: var(--accent-foreground);">GOTI ADARIAN TRUST FUND</span>
+
+            <div style="display:grid; gap:1rem;">
+                <div style="display:flex; justify-content:space-between;">
+                    <strong>Account Name:</strong>
+                    <span>GOTI ADARIAN TRUST FUND</span>
                 </div>
-                <div style="display: flex; justify-content: space-between; padding: 0.75rem; background-color: rgba(255,255,255,0.1); border-radius: 4px;">
-                    <strong style="color: var(--primary);">Bank Name:</strong>
-                    <span style="color: var(--accent-foreground);">The Surat People's Co-Op. Bank Ltd.</span>
+                <div style="display:flex; justify-content:space-between;">
+                    <strong>Bank Name:</strong>
+                    <span>The Surat People's Co-Op. Bank Ltd.</span>
                 </div>
-                <div style="display: flex; justify-content: space-between; padding: 0.75rem; background-color: rgba(255,255,255,0.1); border-radius: 4px;">
-                    <strong style="color: var(--primary);">Account Number:</strong>
-                    <span style="color: var(--accent-foreground);">104041143975</span>
+                <div style="display:flex; justify-content:space-between;">
+                    <strong>Account Number:</strong>
+                    <span>104041143975</span>
                 </div>
-                <div style="display: flex; justify-content: space-between; padding: 0.75rem; background-color: rgba(255,255,255,0.1); border-radius: 4px;">
-                    <strong style="color: var(--primary);">IFSC Code:</strong>
-                    <span style="color: var(--accent-foreground);">SPCB0251019</span>
+                <div style="display:flex; justify-content:space-between;">
+                    <strong>IFSC Code:</strong>
+                    <span>SPCB0251019</span>
                 </div>
             </div>
-            <p style="text-align: center; color: var(--accent-foreground); margin-top: 1.5rem; font-size: 0.9rem;">
-                <i class="fas fa-phone" style="margin-right: 0.5rem; color: var(--primary);"></i>
-                Call <a href="tel:+917573013336" style="color: var(--primary);">+91 7573013336</a> for complete bank details
+
+            <p style="text-align:center; margin-top:2rem;">
+                🙏 Kindly mention <strong>Your Name & Purpose</strong> in the transaction remarks
+            </p>
+
+            <p style="text-align:center; margin-top:1rem; font-size:0.9rem;">
+                📞 Assistance:
+                <a href="tel:+917573013336" style="color:var(--primary);">+91 7573013336</a>
             </p>
         </div>
     </div>
 </section>
 
+<!-- Donation Information -->
+<section class="donate-content">
+    <div class="container">
+        <div class="donate-info">
+            <h3>Help Preserve Our Heritage</h3>
+            <p>
+                Your generous contributions help us maintain the sacred fire,
+                preserve our cultural traditions, and support community programs
+                that keep our heritage alive.
+            </p>
 
-        <!-- Transparency -->
-        <section style="padding: 4rem 0;">
-            <div class="container">
-                <div class="grid grid-cols-2">
-                    <div>
-                        <h2 style="margin-bottom: 2rem; color: var(--accent-foreground);">Transparency & Accountability</h2>
-                        <p style="margin-bottom: 1.5rem; color: var(--accent-foreground);">
-                            We believe in complete transparency regarding how your donations are used. 
-                            Every rupee is carefully allocated to preserve our heritage and serve our community.
-                        </p>
-                        <ul style="list-style: none; padding: 0;">
-                            <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; color: var(--accent-foreground);">
-                                <i class="fas fa-chart-pie" style="color: var(--primary);"></i>
-                                <span>Detailed financial reports published annually</span>
-                            </li>
-                            <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; color: var(--accent-foreground);">
-                                <i class="fas fa-shield-alt" style="color: var(--primary);"></i>
-                                <span>All donations are tax-exempt under 80G</span>
-                            </li>
-                            <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; color: var(--accent-foreground);">
-                                <i class="fas fa-users" style="color: var(--primary);"></i>
-                                <span>Community oversight and governance</span>
-                            </li>
-                            <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; color: var(--accent-foreground);">
-                                <i class="fas fa-envelope" style="color: var(--primary);"></i>
-                                <span>Regular updates to donors about impact</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div style="padding: 2rem; background-color: rgba(255, 255, 255, 0.1); border-radius: var(--radius);">
-                        <h3 style="margin-bottom: 1.5rem; color: var(--primary);">Contact for Large Donations</h3>
-                        <p style="margin-bottom: 1.5rem; color: var(--accent-foreground);">
-                            For significant contributions or to discuss specific donation purposes, 
-                            please contact our temple administration directly.
-                        </p>
-                        <div style="margin-bottom: 1rem;">
-                            <strong style="color: var(--accent-foreground);">Phone:</strong><br>
-                            <a href="tel:+917573013336" style="color: var(--primary); text-decoration: none;">+91 7573013336</a>
-                        </div>
-                        <div style="margin-bottom: 1rem;">
-                            <strong style="color: var(--accent-foreground);">Email:</strong><br>
-                            <span style="color: var(--accent-foreground);">Available upon request</span>
-                        </div>
-                        <div>
-                            <strong style="color: var(--accent-foreground);">Office Hours:</strong><br>
-                            <span style="color: var(--accent-foreground);">Daily 9:00 AM - 6:00 PM</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="donation-uses">
+                <h4>How Your Donation Helps:</h4>
+                <ul>
+                    <li><i class="fas fa-fire"></i> Maintaining the sacred fire and temple facilities</li>
+                    <li><i class="fas fa-book"></i> Providing sandalwood and fuel for uninterrupted rituals</li>
+                    <li><i class="fas fa-users"></i> Supporting priests’ welfare and religious duties</li>
+                </ul>
             </div>
-        </section>
-    </main>
 
-    <!-- Footer -->
-    <footer style="background-color: rgba(0, 0, 0, 0.3); color: var(--accent-foreground); padding: 3rem 0 1rem;">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Goti Adarian</h4>
-                    <p>Preserving the sacred fire and ancient wisdom of the Parsi-Zoroastrian tradition for future generations.</p>
-                    <div class="footer-address">
-                        <p><strong>Address:</strong></p>
-                        <address>
-                            <a href="https://www.google.com/maps/search/?api=1&query=7%2F1381%2C+6R4C%2BMGF%2C+Variyavi+Bhagol%2C+Variali+Bazar%2C+Dhastipura%2C+Surat%2C+Gujarat+395003" target="_blank" rel="noopener noreferrer" style="color: var(--accent-foreground);">
-                                Goti Adarian Temple<br>
-                                7/1381, 6R4C+MGF, Variyavi Bhagol<br>
-                                Variali Bazar, Dhastipura<br>
-                                Surat, Gujarat 395003<br>
-                                India
-                            </a>
-                        </address>
-                        <p><strong>Phone:</strong></p>
-                        <p>
-                            <a href="tel:+917573013336" style="color: var(--accent-foreground);">+91 7573013336</a><br>
-                            Alternative: +91 9727760344 / +91 7573013330
-                        </p>
-                    </div>
-                    <div class="footer-logo">
-                        <img src="../assets/faravahar.png" alt="Faravahar symbol">
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="../index.html" style="color: var(--accent-foreground);">Home</a></li>
-                        <li><a href="about.html" style="color: var(--accent-foreground);">About</a></li>
-                        <li><a href="community.html" style="color: var(--accent-foreground);">Community</a></li>
-                        <li><a href="zoroastrianism.html" style="color: var(--accent-foreground);">Zoroastrianism</a></li>
-                        <li><a href="rituals.html" style="color: var(--accent-foreground);">Rituals</a></li>
-                        <li><a href="education.html" style="color: var(--accent-foreground);">Education</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Resources & Visit Us</h4>
-                    <ul class="footer-links">
-                        <li><a href="#" style="color: var(--accent-foreground);">Prayer Schedule</a></li>
-                        <li><a href="#" style="color: var(--accent-foreground);">Festival Calendar</a></li>
-                        <li><a href="#" style="color: var(--accent-foreground);">Scholarly Articles</a></li>
-                        <li><a href="#" style="color: var(--accent-foreground);">Community Directory</a></li>
-                        <li><a href="#" style="color: var(--accent-foreground);">FAQ</a></li>
-                    </ul>
-                    
-                    <div class="footer-hours">
-                        <p><strong>Opening Hours:</strong></p>
-                        <p><strong>Open 24 hours a day</strong></p>
-                        <p>7 days a week</p>
-                        <p>365 days a year</p>
-                        <p><em>Always available for the community</em></p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="faravahar-divider">
-                <div class="divider-icon">
-                    <img src="../assets/faravahar.png" alt="Faravahar symbol">
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Goti Adarian. All rights reserved.</p>
-                <div class="footer-legal">
-                    <a href="#" style="color: var(--accent-foreground);">Privacy Policy</a>
-                    <a href="#" style="color: var(--accent-foreground);">Terms of Service</a>
-                    <a href="#" style="color: var(--accent-foreground);">Accessibility</a>
-                </div>
-                <div class="footer-cta">
-                    <a href="tel:+917573013336" class="btn" style="background-color: var(--primary); color: var(--secondary);">
-                        <i class="fas fa-phone"></i>
-                        Call +91 7573013336
-                    </a>
-                </div>
+            <div style="margin-top:2rem; padding:1.5rem; background-color:rgba(255,255,255,0.1); border-radius:var(--radius);">
+                <h4>Ways to Give</h4>
+                <ul style="list-style:none; padding:0;">
+                    <li><i class="fas fa-university"></i> Bank transfer</li>
+                    <li><i class="fas fa-handshake"></i> In-person donation at the temple</li>
+                    <li><i class="fas fa-repeat"></i> Monthly standing instructions</li>
+                </ul>
             </div>
         </div>
-    </footer>
+    </div>
+</section>
 
-    <script src="../js/main.js"></script>
-    <script>
-        // Razorpay Configuration
-        // IMPORTANT: Replace 'YOUR_RAZORPAY_KEY_ID' with your actual Razorpay Key ID from dashboard
-        // This is the PUBLIC key and safe to use in frontend
-        const RAZORPAY_KEY_ID = 'YOUR_RAZORPAY_KEY_ID';
-        
-        // Handle amount button clicks
-        const amountButtons = document.querySelectorAll('.amount-btn');
-        amountButtons.forEach(btn => {
-            btn.addEventListener('click', function() {
-                const amount = this.getAttribute('data-amount');
-                // Update both forms
-                document.getElementById('customAmount').value = amount;
-                document.getElementById('customAmountGu').value = amount;
-                
-                // Highlight selected button
-                amountButtons.forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                
-                // Update PAN requirement indicator
-                updatePanRequirement(amount);
-            });
-        });
-        
-        // Update PAN requirement based on amount
-        function updatePanRequirement(amount) {
-            const panRequired = document.getElementById('panRequired');
-            const panRequiredGu = document.getElementById('panRequiredGu');
-            const panInputEn = document.getElementById('donorPAN');
-            const panInputGu = document.getElementById('donorPANGu');
-            
-            if (parseInt(amount) > 0) {
-                if (panRequired) panRequired.style.display = 'inline';
-                if (panRequiredGu) panRequiredGu.style.display = 'inline';
-                if (panInputEn) panInputEn.required = true;
-                if (panInputGu) panInputGu.required = true;
-            } else {
-                if (panRequired) panRequired.style.display = 'none';
-                if (panRequiredGu) panRequiredGu.style.display = 'none';
-                if (panInputEn) panInputEn.required = false;
-                if (panInputGu) panInputGu.required = false;
-            }
-        }
-        
-        // Listen for manual amount input changes
-        document.getElementById('customAmount').addEventListener('input', function() {
-            updatePanRequirement(this.value);
-        });
-        document.getElementById('customAmountGu').addEventListener('input', function() {
-            updatePanRequirement(this.value);
-        });
-        
-        // Handle English form submission
-        document.getElementById('donateForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            initiatePayment('en');
-        });
-        
-        // Handle Gujarati form submission
-        document.getElementById('donateFormGu').addEventListener('submit', function(e) {
-            e.preventDefault();
-            initiatePayment('gu');
-        });
-        
-        function initiatePayment(lang) {
-            // Get form data based on language
-            const formId = lang === 'en' ? 'donateForm' : 'donateFormGu';
-            const form = document.getElementById(formId);
-            const formData = new FormData(form);
-            
-            const donorName = formData.get('name');
-            const donorEmail = formData.get('email');
-            const amount = parseInt(formData.get('amount'));
-            const purpose = formData.get('purpose');
-            const recurring = formData.get('recurring') ? true : false;
-            const pan = formData.get('pan');
-            
-            // Validate amount
-            if (!amount || amount < 1) {
-                alert(lang === 'en' ? 'Please enter a valid donation amount' : 'કૃપા કરીને માન્ય દાન રકમ દાખલ કરો');
-                return;
-            }
-            
-            // Validate PAN for donations above ₹10,000
-            if (amount > 10000 && (!pan || !/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/.test(pan.toUpperCase()))) {
-                alert(lang === 'en' ? 
-                    'PAN number is required for donations. Please enter a valid PAN (e.g., ABCDE1234F)' : 
-                    '₹10,000 થી વધુ દાન માટે PAN નંબર જરૂરી છે. કૃપા કરીને માન્ય PAN દાખલ કરો (દા.ત., ABCDE1234F)');
-                return;
-            }
-            
-            // Validate Razorpay Key
-            if (RAZORPAY_KEY_ID === 'YOUR_RAZORPAY_KEY_ID') {
-                alert(lang === 'en' ? 
-                    'Payment gateway is being configured. Please contact the temple office to donate.' : 
-                    'ચુકવણી ગેટવે ગોઠવવામાં આવી રહ્યો છે. દાન આપવા માટે કૃપા કરીને મંદિર કચેરીનો સંપર્ક કરો.');
-                return;
-            }
-            
-            // Configure Razorpay options
-            const options = {
-                key: RAZORPAY_KEY_ID,
-                amount: amount * 100, // Convert to paise (smallest currency unit)
-                currency: 'INR',
-                name: 'Goti Adarian',
-                description: getPurposeText(purpose, lang),
-                image: '../assets/faravahar.png',
-                prefill: {
-                    name: donorName,
-                    email: donorEmail
-                },
-                theme: {
-                    color: '#c8860d'
-                },
-                handler: function (response) {
-                    // Payment successful
-                    onPaymentSuccess(response, {
-                        name: donorName,
-                        email: donorEmail,
-                        amount: amount,
-                        purpose: purpose,
-                        recurring: recurring,
-                        lang: lang
-                    });
-                },
-                modal: {
-                    ondismiss: function() {
-                        console.log('Payment cancelled by user');
-                    }
-                },
-                notes: {
-                    purpose: purpose,
-                    recurring: recurring ? 'yes' : 'no'
-                }
-            };
-            
-            // Initialize Razorpay and open checkout
-            const razorpay = new Razorpay(options);
-            razorpay.open();
-        }
-        
-        function getPurposeText(purpose, lang) {
-            const purposes = {
-                temple: { en: 'Temple Maintenance', gu: 'આદરિયાનની જાળવણી' },
-                kathi: { en: 'Kathi Fund', gu: 'કાઠી ફંડ' },
-                mobed: { en: 'Mobed Fund', gu: 'મોબેદ ફંડ' }
-            };
-            return purposes[purpose] ? purposes[purpose][lang] : 'General Donation';
-        }
-        
-        function onPaymentSuccess(response, donationData) {
-            // Payment successful - you can send this data to your server for verification
-            console.log('Payment successful:', response);
-            
-            // Show success message
-            const message = donationData.lang === 'en' ? 
-                `Thank you ${donationData.name}! Your donation of ₹${donationData.amount} has been received successfully.\n\nPayment ID: ${response.razorpay_payment_id}\n\nYou will receive a confirmation email shortly.` :
-                `આભાર ${donationData.name}! તમારું ₹${donationData.amount} નું દાન સફળતાપૂર્વક પ્રાપ્ત થયું છે.\n\nચુકવણી ID: ${response.razorpay_payment_id}\n\nતમને ટૂંક સમયમાં પુષ્ટિકરણ ઇમેઇલ પ્રાપ્ત થશે.`;
-            
-            alert(message);
-            
-            // Optional: Send to server for storage and verification
-            // You would need a backend API endpoint for this
-            /*
-            fetch('/api/verify-payment', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    payment_id: response.razorpay_payment_id,
-                    order_id: response.razorpay_order_id,
-                    signature: response.razorpay_signature,
-                    donation: donationData
-                })
-            });
-            */
-            
-            // Reset form
-            document.getElementById(donationData.lang === 'en' ? 'donateForm' : 'donateFormGu').reset();
-        }
-    </script>
+<!-- Transparency -->
+<section style="padding:4rem 0;">
+    <div class="container">
+        <h2>Transparency & Accountability</h2>
+        <p>
+            We believe in complete transparency. Every rupee is carefully allocated
+            to preserve our heritage and serve the community.
+        </p>
+
+        <ul style="list-style:none; padding:0;">
+            <li><i class="fas fa-chart-pie"></i> Annual financial reporting</li>
+            <li><i class="fas fa-shield-alt"></i> Donations eligible under 80G</li>
+            <li><i class="fas fa-users"></i> Community governance</li>
+        </ul>
+    </div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer style="background-color:rgba(0,0,0,0.3); padding:3rem 0 1rem;">
+    <div class="container">
+        <p style="text-align:center;">
+            © 2025 Goti Adarian. All rights reserved.
+        </p>
+    </div>
+</footer>
+
+<script src="../js/main.js"></script>
 </body>
 </html>
