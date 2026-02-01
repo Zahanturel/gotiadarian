@@ -3,8 +3,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     initNavigation();
     initHeroSlider();
-    initDonationForm();       // ✅ keep donation logic
-    // initContactForm();     // ❌ disable contact form JS
+    initDonationForm();
     initAnimations();
     initSmoothScrolling();
     updateActiveNavigation();
@@ -13,10 +12,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Navigation functionality
 function initNavigation() {
-    const navToggle = document.getElementById('navToggle');
-    const navMenu = document.getElementById('navMenu');
-    
-    if (navToggle && navMenu) {
+    try {
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        if (!navToggle || !navMenu) return;
         navToggle.addEventListener('click', function() {
             navMenu.classList.toggle('active');
             
@@ -28,6 +28,8 @@ function initNavigation() {
                 icon.className = 'fas fa-bars';
             }
         });
+    } catch (error) {
+        // Navigation initialization failed silently
     }
     
     // Close mobile menu when clicking on a link
@@ -58,8 +60,9 @@ function initNavigation() {
 
 // Hero slider functionality (for home page)
 function initHeroSlider() {
-    const heroSection = document.querySelector('.hero-section');
-    if (!heroSection) return;
+    try {
+        const heroSection = document.querySelector('.hero-section');
+        if (!heroSection) return;
     
     const slideImages = [
         'https://images.unsplash.com/photo-1612619695468-83053c3ab53e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTcxMzQ2Njk4OA&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080',
@@ -78,24 +81,27 @@ function initHeroSlider() {
         heroSection.insertBefore(slide, heroSection.firstChild);
     });
     
-    // Auto-advance slides
-    setInterval(() => {
-        const slides = document.querySelectorAll('.hero-bg');
-        slides[currentSlide].style.opacity = '0';
-        currentSlide = (currentSlide + 1) % slideImages.length;
-        slides[currentSlide].style.opacity = '1';
-    }, 5000);
+        // Auto-advance slides
+        setInterval(() => {
+            const slides = document.querySelectorAll('.hero-bg');
+            if (slides.length > 0) {
+                slides[currentSlide].style.opacity = '0';
+                currentSlide = (currentSlide + 1) % slideImages.length;
+                slides[currentSlide].style.opacity = '1';
+            }
+        }, 5000);
+    } catch (error) {
+        // Hero slider initialization failed silently
+    }
 }
 
-// Form functionality
-function initForms() {
-    initDonationForm();
-    //initContactForm();
-}
+// Form functionality - donation form only
+// Contact form uses external service (FormSubmit.co/EmailJS)
 
 function initDonationForm() {
-    const donateForm = document.getElementById('donateForm');
-    if (!donateForm) return;
+    try {
+        const donateForm = document.getElementById('donateForm');
+        if (!donateForm) return;
     
     const amountButtons = document.querySelectorAll('.amount-btn');
     const customAmountInput = document.getElementById('customAmount');
@@ -150,11 +156,9 @@ function initDonationForm() {
         }
         
         // Show confirmation
-        const confirmMessage = `Thank you for your generous donation of ₹${donationData.amount}!\n\nDonor: ${donationData.name}\nPurpose: ${donationData.purpose}\n${donationData.recurring ? 'This will be a recurring monthly donation.' : ''}\n\nYou will be redirected to the payment gateway.`;
+        const confirmMessage = `Thank you for your generous donation of ₹${donationData.amount}!\n\nDonor: ${donationData.name}\nPurpose: ${donationData.purpose}\n${donationData.recurring ? 'This will be a recurring monthly donation.' : ''}\n\nPlease use the bank transfer details provided on this page.`;
         
         if (confirm(confirmMessage)) {
-            alert('Redirecting to payment gateway...');
-            
             // Reset form
             this.reset();
             amountButtons.forEach(btn => btn.classList.remove('active'));
@@ -162,50 +166,18 @@ function initDonationForm() {
     });
 }
 
-function initContactForm() {
-    const contactForm = document.getElementById('contactForm');
-    if (!contactForm) return;
-    
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const formData = new FormData(this);
-        const contactData = {
-            name: formData.get('name'),
-            email: formData.get('email'),
-            subject: formData.get('subject'),
-            message: formData.get('message')
-        };
-        
-        // Validate form
-        if (!contactData.name || !contactData.email || !contactData.subject || !contactData.message) {
-            alert('Please fill in all fields.');
-            return;
-        }
-        
-        // Email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(contactData.email)) {
-            alert('Please enter a valid email address.');
-            return;
-        }
-        
-        // Show success message
-        alert(`Thank you for your message, ${contactData.name}! We will get back to you soon at ${contactData.email}.`);
-        
-        // Reset form
-        this.reset();
-    });
-}
+// Contact form handled by external service (FormSubmit.co/EmailJS)
+// No local JavaScript validation needed
 
 // Animation functionality
 function initAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver(function(entries) {
+    try {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
@@ -223,7 +195,8 @@ function initAnimations() {
 
 // Smooth scrolling for anchor links
 function initSmoothScrolling() {
-    document.addEventListener('click', function(e) {
+    try {
+        document.addEventListener('click', function(e) {
         const target = e.target.closest('a[href^="#"]');
         if (!target) return;
         
@@ -241,25 +214,32 @@ function initSmoothScrolling() {
             });
         }
     });
+    } catch (error) {
+        // Smooth scrolling initialization failed silently
+    }
 }
 
 // Update active navigation based on current page
 function updateActiveNavigation() {
-    const currentPage = window.location.pathname;
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        const href = link.getAttribute('href');
+    try {
+        const currentPage = window.location.pathname;
+        const navLinks = document.querySelectorAll('.nav-link');
         
-        // Handle different page matching
-        if (
-            (currentPage === '/' || currentPage === '/index.html') && (href === '/' || href === 'index.html') ||
-            currentPage.includes(href.replace('.html', '')) && href !== '/' && href !== 'index.html'
-        ) {
-            link.classList.add('active');
-        }
-    });
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            const href = link.getAttribute('href');
+            
+            // Handle different page matching
+            if (
+                (currentPage === '/' || currentPage === '/index.html') && (href === '/' || href === 'index.html') ||
+                currentPage.includes(href.replace('.html', '')) && href !== '/' && href !== 'index.html'
+            ) {
+                link.classList.add('active');
+            }
+        });
+    } catch (error) {
+        // Navigation update failed silently
+    }
 }
 
 // Utility functions
@@ -352,8 +332,8 @@ document.addEventListener('DOMContentLoaded', initBackToTop);
 
 // Analytics tracking (for future implementation)
 function trackEvent(eventName, data) {
-    console.log('Event tracked:', eventName, data);
     // Future: integrate with Google Analytics or other tracking service
+    // Silently track events without console output
 }
 
 // Track phone clicks
@@ -369,10 +349,11 @@ document.addEventListener('click', function(e) {
 
 // Language switcher functionality
 function initLanguageSwitcher() {
-    const englishBtn = document.getElementById('englishBtn');
-    const gujaratiBtn = document.getElementById('gujaratiBtn');
-    
-    if (englishBtn && gujaratiBtn) {
+    try {
+        const englishBtn = document.getElementById('englishBtn');
+        const gujaratiBtn = document.getElementById('gujaratiBtn');
+        
+        if (!englishBtn || !gujaratiBtn) return;
         // Get current language from localStorage or default to English
         const currentLang = localStorage.getItem('language') || 'en';
         
@@ -396,10 +377,11 @@ function initLanguageSwitcher() {
 }
 
 function switchToEnglish() {
-    const englishBtn = document.getElementById('englishBtn');
-    const gujaratiBtn = document.getElementById('gujaratiBtn');
-    
-    if (englishBtn && gujaratiBtn) {
+    try {
+        const englishBtn = document.getElementById('englishBtn');
+        const gujaratiBtn = document.getElementById('gujaratiBtn');
+        
+        if (!englishBtn || !gujaratiBtn) return;
         englishBtn.classList.add('active');
         gujaratiBtn.classList.remove('active');
     }
@@ -408,16 +390,20 @@ function switchToEnglish() {
     document.querySelectorAll('[data-lang="en"]').forEach(el => {
         el.style.display = '';
     });
-    document.querySelectorAll('[data-lang="gu"]').forEach(el => {
-        el.style.display = 'none';
-    });
+        document.querySelectorAll('[data-lang="gu"]').forEach(el => {
+            el.style.display = 'none';
+        });
+    } catch (error) {
+        // Language switch failed silently
+    }
 }
 
 function switchToGujarati() {
-    const englishBtn = document.getElementById('englishBtn');
-    const gujaratiBtn = document.getElementById('gujaratiBtn');
-    
-    if (englishBtn && gujaratiBtn) {
+    try {
+        const englishBtn = document.getElementById('englishBtn');
+        const gujaratiBtn = document.getElementById('gujaratiBtn');
+        
+        if (!englishBtn || !gujaratiBtn) return;
         englishBtn.classList.remove('active');
         gujaratiBtn.classList.add('active');
     }
@@ -426,9 +412,12 @@ function switchToGujarati() {
     document.querySelectorAll('[data-lang="en"]').forEach(el => {
         el.style.display = 'none';
     });
-    document.querySelectorAll('[data-lang="gu"]').forEach(el => {
-        el.style.display = '';
-    });
+        document.querySelectorAll('[data-lang="gu"]').forEach(el => {
+            el.style.display = '';
+        });
+    } catch (error) {
+        // Language switch failed silently
+    }
 }
 
-console.log('Goti Adarian website initialized successfully');
+// Website initialized successfully
