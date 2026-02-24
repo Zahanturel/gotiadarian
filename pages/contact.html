@@ -227,12 +227,21 @@
                     </div>
                     
                     <div>
-                        <div style="background: linear-gradient(135deg, var(--muted), var(--background)); height: 300px; border-radius: var(--radius); display: flex; align-items: center; justify-content: center; margin-bottom: 2rem; border: 2px solid var(--border);">
-                            <div style="text-align: center; color: var(--muted-foreground);">
-                                <i class="fas fa-map-marker-alt" style="font-size: 3rem; margin-bottom: 1rem;"></i>
-                                <p><strong>Interactive Map</strong></p>
-                                <p style="font-size: 0.9rem;">Click the address above to open in Google Maps</p>
-                            </div>
+                        <div style="
+                            border-radius: var(--radius);
+                            overflow: hidden;
+                            border: 2px solid var(--border);
+                            margin-bottom: 2rem;
+                        ">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.634418298468!2d72.818726775772!3d21.206676980487536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04e8e972c3b15%3A0x459a21de805924b6!2sGoti%20Adarian!5e0!3m2!1sen!2sin!4v1771908505326!5m2!1sen!2sin"
+                                width="100%"
+                                height="300"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
                         </div>
                         
                         <div class="card">
