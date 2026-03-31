@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://gotiadarian.com
+Sitemap: https://gotiadarian.com/sitemap.xml
