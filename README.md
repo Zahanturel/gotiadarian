@@ -28,4 +28,5 @@ Contributions are welcome — corrections, translations, photos, or content addi
 
 Open an issue or submit a pull request. If you're from the community and not comfortable with GitHub, reach out directly and we'll handle it.
 
+
 Please keep changes respectful of the temple and the community it represents.
