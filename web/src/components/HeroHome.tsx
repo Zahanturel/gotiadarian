@@ -21,9 +21,6 @@ export function HeroHome() {
       />
       <div className="relative z-[2] flex min-h-screen flex-col justify-center px-4 pb-28 pt-28 text-center sm:px-6 sm:pb-32 sm:pt-32 lg:px-10">
         <Container>
-          <p className="hero-rise mb-5 text-xs font-semibold uppercase tracking-[0.3em] text-primary">
-            Surat · Parsi-Zoroastrian Fire Temple
-          </p>
           <h1 className="hero-rise mx-auto mb-4 max-w-[64rem] font-serif text-[clamp(2.25rem,5.5vw,4.5rem)] font-bold leading-[1.08] text-[hsl(36,39%,96%)] [animation-delay:120ms]">
             The Sacred Fire of Goti Adarian
           </h1>
