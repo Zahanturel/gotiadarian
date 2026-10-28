@@ -63,11 +63,8 @@ export default function RitualsPage() {
             ].map((cer) => (
               <FadeIn key={cer.label}>
                 <div className="surface-card overflow-hidden">
-                  <div className="flex min-h-[200px] items-center justify-center bg-muted/80">
-                    <div className="text-center">
-                      <div className="mx-auto mb-2 h-16 w-16 rounded-full border-2 border-dashed border-primary/40" />
-                      <p className="font-serif font-semibold text-secondary">{cer.label}</p>
-                    </div>
+                  <div className="m-4 flex aspect-[16/9] items-center justify-center rounded-md border-2 border-dashed border-primary/40 bg-muted/80">
+                    <p className="font-serif font-semibold text-secondary">{cer.label} photo</p>
                   </div>
                   <div className="p-8">
                     <h3 className="font-serif text-xl font-semibold text-secondary">{cer.label}</h3>
