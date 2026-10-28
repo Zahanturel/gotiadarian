@@ -12,3 +12,7 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Private working files (never commit)
+private/
+.claude/
