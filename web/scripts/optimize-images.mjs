@@ -25,3 +25,21 @@ if (fs.existsSync(hero)) {
     .toFile("public/assets/og-goti.jpg");
   fs.unlinkSync(hero);
 }
+
+// Portraits where automatic cropping missed the face: re-cut from the originals with explicit crops.
+const FROM_ORIGINALS = {
+  "yasmin-dotiwala": {
+    src: "../attached_assets/yasmin-dotiwala_1764065765185.jpg",
+    crop: { left: 0, top: 0, width: 683, height: 683 },
+  },
+  "gul-palia": {
+    src: "../attached_assets/gul-palia_1764065756128.png",
+    crop: { left: 40, top: 130, width: 560, height: 560 },
+  },
+};
+for (const [name, { src, crop }] of Object.entries(FROM_ORIGINALS)) {
+  if (!fs.existsSync(src)) continue;
+  const out = path.join(dir, `${name}.webp`);
+  await sharp(src).rotate().extract(crop).resize(640, 640).webp({ quality: 80 }).toFile(out);
+  console.log(out);
+}
