@@ -28,7 +28,7 @@ export function HeroHome() {
       </div>
       <div className="hero-overlay pointer-events-none absolute inset-0" aria-hidden />
 
-      <Container className="relative pb-[clamp(28px,5vh,48px)] pt-[120px]">
+      <Container className="relative pb-[clamp(28px,5vh,48px)] pt-16 sm:pt-[120px]">
         <h1
           className="hero-rise max-w-[13ch] font-serif text-[clamp(2.5rem,6.4vw,5.25rem)] font-medium leading-[1.04] tracking-[-0.02em] text-secondary-foreground"
           style={{ animationDelay: "120ms" }}
