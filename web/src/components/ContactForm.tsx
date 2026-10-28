@@ -3,8 +3,7 @@ export function ContactForm() {
     <form action="https://formsubmit.co/contact@gotiadarian.com" method="POST">
       <input type="hidden" name="_subject" value="New Contact Message - Goti Adarian" />
       <input type="hidden" name="_captcha" value="false" />
-      <input type="hidden" name="_cc" value="meherzad_turel@yahoo.com" />
-      <input type="hidden" name="_cc" value="turelzahan10@gmail.com" />
+      <input type="hidden" name="_next" value="https://gotiadarian.com/contact/thanks/" />
 
       <div className="form-group">
         <label htmlFor="contactName">Name</label>
