@@ -17,6 +17,12 @@ const config: Config = {
         accent: "hsl(353, 100%, 25%)",
         "accent-foreground": "hsl(36, 39%, 96%)",
         border: "hsl(36, 29%, 84%)",
+        // Gold that passes AA for small text and icons on cream/sand (~5.7:1 on cream)
+        "gold-ink": "hsl(40, 62%, 30%)",
+        // Light gold for labels and links on navy or over the hero photo
+        "gold-soft": "hsl(43, 72%, 70%)",
+        sand: "hsl(36, 31%, 89%)",
+        rule: "hsl(36, 29%, 80%)",
         donate: {
           bg: "#6b0f0f",
           surface: "rgba(255,255,255,0.08)",

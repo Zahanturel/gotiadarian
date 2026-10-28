@@ -13,6 +13,7 @@ const openSans = Open_Sans({
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
+  style: ["normal", "italic"],
   display: "swap",
 });
 

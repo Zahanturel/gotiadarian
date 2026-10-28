@@ -2,24 +2,37 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { NAV_ITEMS } from "@/lib/nav";
 
 export function Navbar({ donateTheme = false }: { donateTheme?: boolean }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
+
+  // Expose the live header height so full-height sections can size themselves below it.
+  useEffect(() => {
+    const el = headerRef.current;
+    if (!el) return;
+    const set = () => document.documentElement.style.setProperty("--header-h", `${el.offsetHeight}px`);
+    set();
+    const ro = new ResizeObserver(set);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
 
   const linkBase = donateTheme
     ? "text-accent-foreground/90 hover:text-primary"
-    : "text-secondary/90 hover:text-primary";
-  const activeClass = donateTheme ? "text-primary" : "text-primary";
+    : "text-secondary/90 hover:text-gold-ink";
+  const activeClass = donateTheme ? "text-primary" : "text-gold-ink";
   const highlightClass = donateTheme
     ? "rounded-md bg-white/10 px-3 py-1 text-primary"
     : "rounded-md bg-primary/15 px-3 py-1 text-secondary";
 
   return (
     <header
+      ref={headerRef}
       className={`sticky top-0 z-50 border-b shadow-soft backdrop-blur-md ${
         donateTheme
           ? "border-white/10 bg-donate-bg/95"
