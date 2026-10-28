@@ -10,17 +10,20 @@ It is a community project, maintained by volunteers.
 
 ## Tech
 
-Plain HTML and CSS. No frameworks, no build step, no dependencies.
+Next.js (static export) + Tailwind CSS, in `web/`. Deployed to GitHub Pages by `.github/workflows/nextjs.yml`.
 
 ## Running locally
 
-Download or clone the repository, then open `index.html` in any browser.
-
 ```bash
 git clone https://github.com/Zahanturel/gotiadarian.git
+cd gotiadarian/web
+npm install
+npm run dev
 ```
 
-That's it.
+Open http://localhost:3000. `npm run build` writes the static site to `web/out`.
+
+To re-optimise photos after adding new ones, run `node scripts/optimize-images.mjs` from `web/`.
 
 ## Contributing
 

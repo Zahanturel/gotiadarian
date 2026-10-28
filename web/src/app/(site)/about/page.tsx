@@ -4,7 +4,6 @@ import { PageSection } from "@/components/PageSection";
 import { Container } from "@/components/Container";
 import { FadeIn } from "@/components/FadeIn";
 import { FaravaharDivider } from "@/components/FaravaharDivider";
-import { Bilingual } from "@/contexts/LanguageContext";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
@@ -20,23 +19,11 @@ export default function AboutPage() {
       <PageSection variant="muted">
         <Container className="text-center">
           <h1 className="font-serif text-display font-bold text-secondary">
-            <Bilingual en={<>Our Heritage</>} gu={<>અમારો વારસો</>} />
+            Our Heritage
           </h1>
           <p className="mx-auto mt-8 max-w-prose text-body-lg text-muted-foreground">
-            <Bilingual
-              en={
-                <>
-                  Discover the rich history and enduring legacy of the Goti Adarian temple, a beacon of faith
+            Discover the rich history and enduring legacy of the Goti Adarian temple, a beacon of faith
                   that has guided the Parsi-Zoroastrian community for centuries.
-                </>
-              }
-              gu={
-                <>
-                  ગોતી અદારિયન મંદિરના સમૃદ્ધ ઇતિહાસ અને ચિરસ્થાયી વારસાની શોધ કરો, જે શ્રદ્ધાનું દીપસ્તંભ છે જેણે
-                  સદીઓથી પારસી-ઝોરોસ્ટ્રિયન સમુદાયનું માર્ગદર્શન કર્યું છે.
-                </>
-              }
-            />
           </p>
         </Container>
       </PageSection>
@@ -168,7 +155,7 @@ export default function AboutPage() {
               <div className="flex justify-center">
                 <div className="relative h-[280px] w-[280px] shrink-0 overflow-hidden rounded-full border-4 border-primary">
                   <Image
-                    src="/images/trustees/vaspaan.png"
+                    src="/images/trustees/vaspaan.webp"
                     alt="Vaspaan - Sacred Varasiaji"
                     fill
                     className="object-cover"

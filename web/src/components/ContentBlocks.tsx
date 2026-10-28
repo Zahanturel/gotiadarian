@@ -1,22 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { Bilingual } from "@/contexts/LanguageContext";
 import { FadeIn } from "./FadeIn";
 
 export function IntroFeatureCard({
   icon,
-  titleEn,
-  titleGu,
-  textEn,
-  textGu,
+  title,
+  text,
   delay = 0,
 }: {
   icon: string;
-  titleEn: string;
-  titleGu: string;
-  textEn: string;
-  textGu: string;
+  title: string;
+  text: string;
   delay?: number;
 }) {
   return (
@@ -24,10 +19,10 @@ export function IntroFeatureCard({
       <div className="surface-card h-full p-7 md:p-8">
         <i className={`fas ${icon} mb-4 text-3xl text-primary`} aria-hidden />
         <h3 className="mb-2 font-serif text-xl font-semibold text-secondary">
-          <Bilingual en={<>{titleEn}</>} gu={<>{titleGu}</>} />
+          {title}
         </h3>
         <p className="text-sm leading-relaxed text-muted-foreground">
-          <Bilingual en={<>{textEn}</>} gu={<>{textGu}</>} />
+          {text}
         </p>
       </div>
     </FadeIn>
@@ -36,35 +31,29 @@ export function IntroFeatureCard({
 
 export function HeritagePreviewCard({
   icon,
-  titleEn,
-  titleGu,
-  bodyEn,
-  bodyGu,
+  title,
+  body,
   href,
-  ctaEn,
-  ctaGu,
+  cta,
 }: {
   icon: string;
-  titleEn: string;
-  titleGu: string;
-  bodyEn: string;
-  bodyGu: string;
+  title: string;
+  body: string;
   href: string;
-  ctaEn: string;
-  ctaGu: string;
+  cta: string;
 }) {
   return (
     <FadeIn>
       <div className="surface-card flex h-full flex-col p-7 text-center md:p-8">
         <i className={`fas ${icon} mb-4 text-3xl text-primary`} aria-hidden />
         <h3 className="mb-4 font-serif text-xl font-semibold text-secondary">
-          <Bilingual en={<>{titleEn}</>} gu={<>{titleGu}</>} />
+          {title}
         </h3>
         <p className="mb-6 flex-1 text-sm leading-relaxed text-muted-foreground">
-          <Bilingual en={<>{bodyEn}</>} gu={<>{bodyGu}</>} />
+          {body}
         </p>
         <Link href={href} className="btn btn-outline mt-auto">
-          <Bilingual en={<>{ctaEn}</>} gu={<>{ctaGu}</>} />
+          {cta}
         </Link>
       </div>
     </FadeIn>

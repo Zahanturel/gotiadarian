@@ -137,3 +137,40 @@
     @apply w-full rounded-lg border border-border bg-card px-3 py-2.5 text-foreground shadow-sm transition-colors duration-200 ease-out focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/25;
   }
 }
+
+/* Home hero motion — slow photo drift and staggered entrance; disabled for reduced-motion users */
+@layer components {
+  .hero-photo {
+    animation: hero-drift 28s ease-out both;
+  }
+  .hero-rise {
+    animation: hero-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
+@keyframes hero-drift {
+  from {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-photo,
+  .hero-rise {
+    animation: none;
+  }
+}

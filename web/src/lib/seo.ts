@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { absoluteUrl, SITE_URL } from "./site";
 
-const defaultOgImage = absoluteUrl("/assets/faravahar.png");
+const defaultOgImage = absoluteUrl("/assets/og-goti.jpg");
 
 export type PageSeoInput = {
   title: string;
@@ -11,14 +11,14 @@ export type PageSeoInput = {
 
 /**
  * Per-route metadata: title, description, canonical, Open Graph, Twitter.
- * OG image uses Faravahar asset when deployed; crawlers ignore missing images gracefully.
+ * OG image is the temple photo card.
  */
 export function buildPageMetadata({ title, description, path }: PageSeoInput): Metadata {
   const url = absoluteUrl(path);
   const fullTitle = title.includes("Goti Adarian") ? title : `${title} - Goti Adarian`;
 
   return {
-    title: fullTitle,
+    title: { absolute: fullTitle },
     description,
     alternates: { canonical: url },
     openGraph: {
@@ -28,7 +28,7 @@ export function buildPageMetadata({ title, description, path }: PageSeoInput): M
       siteName: "Goti Adarian",
       locale: "en_IN",
       type: "website",
-      images: [{ url: defaultOgImage, width: 1200, height: 630, alt: "Faravahar symbol — Goti Adarian" }],
+      images: [{ url: defaultOgImage, width: 1200, height: 630, alt: "Goti Adarian fire temple, Surat" }],
     },
     twitter: {
       card: "summary_large_image",

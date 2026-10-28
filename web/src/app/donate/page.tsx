@@ -121,8 +121,6 @@ export default function DonatePage() {
                 </li>
               </ul>
             </div>
-            <br />
-            <br />
             <address className="not-italic text-accent-foreground/95" style={{ marginLeft: 24 }}>
               <strong>Goti Adarian</strong>
               <br />
@@ -142,13 +140,9 @@ export default function DonatePage() {
             Transparency & Accountability
           </h2>
           <p className="mt-4 max-w-prose leading-relaxed text-accent-foreground/95">
-            We believe in complete transparency. Every rupee is carefully allocated to preserve our heritage and
-            serve the community.
+            Donations are used to preserve our heritage and serve the community.
           </p>
           <ul className="mt-8 list-none space-y-3 p-0">
-            <li>
-              <i className="fas fa-chart-pie mr-2 text-primary" aria-hidden /> Annual financial reporting
-            </li>
             <li>
               <i className="fas fa-shield-alt mr-2 text-primary" aria-hidden /> Donations eligible under 80G
             </li>

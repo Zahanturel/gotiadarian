@@ -15,42 +15,42 @@ export const metadata = buildPageMetadata({
 
 const trustees = [
   {
-    img: "/images/trustees/tehmuras-modi.png",
+    img: "/images/trustees/tehmuras-modi.webp",
     alt: "Tehmuras Modi",
     name: "Tehmuras Modi",
     role: "President",
     body: "A devoted member of the Davar Modi family, committed to upholding the sacred traditions and ensuring the temple's continued spiritual service to the community.",
   },
   {
-    img: "/images/trustees/zawareh-wadia.png",
+    img: "/images/trustees/zawareh-wadia.webp",
     alt: "Zawareh Wadia",
     name: "Zawareh Wadia",
     role: "Managing Trustee",
     body: "Representing the esteemed Wadia family, dedicated to preserving the rich heritage and maintaining the sacred fire for future generations.",
   },
   {
-    img: "/images/trustees/sarosh-bhacca.jpg",
+    img: "/images/trustees/sarosh-bhacca.webp",
     alt: "Dr. Sarosh Bhacca",
     name: "Dr. Sarosh Bhacca",
     role: "Trustee",
     body: "A distinguished member of the Bhacca family, bringing wisdom and dedication to the stewardship of our sacred temple.",
   },
   {
-    img: "/images/trustees/gul-palia.png",
+    img: "/images/trustees/gul-palia.webp",
     alt: "Gul Palia",
     name: "Gul Palia",
     role: "Trustee",
     body: "Representing the Palia family's longstanding commitment to the temple's welfare and the preservation of Zoroastrian traditions.",
   },
   {
-    img: "/images/trustees/yasmin-dotiwala.jpg",
+    img: "/images/trustees/yasmin-dotiwala.webp",
     alt: "Yasmin Dotiwala",
     name: "Yasmin Dotiwala",
     role: "Trustee",
     body: "A devoted trustee from the Dotiwala family, working to ensure the continuity of our sacred rituals and community programs.",
   },
   {
-    img: "/images/trustees/ryan-modi.jpg",
+    img: "/images/trustees/ryan-modi.webp",
     alt: "Ryan Modi",
     name: "Rayan Modi",
     role: "Trustee",
@@ -107,7 +107,7 @@ export default function TrusteesPage() {
               <div className="grid items-center gap-10 md:grid-cols-2">
                 <div className="relative mx-auto h-[250px] w-[250px] shrink-0 overflow-hidden rounded-full border-4 border-primary">
                   <Image
-                    src="/images/trustees/panthaky-meherzad-turel.jpg"
+                    src="/images/trustees/panthaky-meherzad-turel.webp"
                     alt="Er. Meherzad Turel - Panthaky"
                     fill
                     className="object-cover"

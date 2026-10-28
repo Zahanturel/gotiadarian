@@ -84,6 +84,21 @@ export function SiteFooter() {
                   Rituals
                 </Link>
               </li>
+              <li>
+                <Link href="/trustees" className="text-secondary-foreground/90 transition-colors duration-200 hover:text-primary">
+                  Our Trustees
+                </Link>
+              </li>
+              <li>
+                <Link href="/donate" className="text-secondary-foreground/90 transition-colors duration-200 hover:text-primary">
+                  Donate
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-secondary-foreground/90 transition-colors duration-200 hover:text-primary">
+                  Contact
+                </Link>
+              </li>
             </ul>
           </nav>
 
@@ -96,31 +111,9 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-14 flex justify-center">
-          <div className="relative h-12 w-12 opacity-80">
-            <Image
-              src="/assets/faravahar.png"
-              alt=""
-              fill
-              className="object-contain"
-              sizes="48px"
-            />
-          </div>
-        </div>
 
         <div className="mt-12 flex flex-col items-center gap-8 border-t border-white/10 pt-12 text-center sm:flex-row sm:justify-between sm:text-left">
-          <p className="text-sm text-secondary-foreground/80">&copy; 2025 Goti Adarian. All rights reserved.</p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm">
-            <a href="#" className="transition-colors duration-200 hover:text-primary">
-              Privacy Policy
-            </a>
-            <a href="#" className="transition-colors duration-200 hover:text-primary">
-              Terms of Service
-            </a>
-            <a href="#" className="transition-colors duration-200 hover:text-primary">
-              Accessibility
-            </a>
-          </div>
+          <p className="text-sm text-secondary-foreground/80">&copy; 2026 Goti Adarian. All rights reserved.</p>
           <a href="tel:+917573013336" className="btn btn-phone text-sm">
             <i className="fas fa-phone" aria-hidden />
             Call +91 7573013336

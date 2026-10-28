@@ -3,7 +3,6 @@ import { PageSection } from "@/components/PageSection";
 import { Container } from "@/components/Container";
 import { FadeIn } from "@/components/FadeIn";
 import { FaravaharDivider } from "@/components/FaravaharDivider";
-import { Bilingual } from "@/contexts/LanguageContext";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
@@ -38,23 +37,11 @@ export default function RitualsPage() {
       <PageSection variant="muted">
         <Container className="text-center">
           <h1 className="font-serif text-display font-bold text-secondary">
-            <Bilingual en={<>Sacred Ceremonies</>} gu={<>પવિત્ર વિધિઓ</>} />
+            Sacred Ceremonies
           </h1>
           <p className="mx-auto mt-8 max-w-prose text-body-lg text-muted-foreground">
-            <Bilingual
-              en={
-                <>
-                  Discover the ancient rituals and ceremonies that connect our community to the divine and preserve
+            Discover the ancient rituals and ceremonies that connect our community to the divine and preserve
                   our sacred traditions.
-                </>
-              }
-              gu={
-                <>
-                  પ્રાચીન વિધિઓ અને વિધાનોની શોધ કરો જે અમારા સમુદાયને દિવ્યતા સાથે જોડે છે અને અમારી પવિત્ર પરંપરાઓને
-                  સાચવે છે.
-                </>
-              }
-            />
           </p>
         </Container>
       </PageSection>

@@ -3,7 +3,6 @@ import { PageSection } from "@/components/PageSection";
 import { Container } from "@/components/Container";
 import { FadeIn } from "@/components/FadeIn";
 import { FaravaharDivider } from "@/components/FaravaharDivider";
-import { Bilingual } from "@/contexts/LanguageContext";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
@@ -61,23 +60,11 @@ export default function CommunityPage() {
       <PageSection variant="muted">
         <Container className="text-center">
           <h1 className="font-serif text-display font-bold text-secondary">
-            <Bilingual en={<>Community Events</>} gu={<>સમુદાયિક કાર્યક્રમો</>} />
+            Community Events
           </h1>
           <p className="mx-auto mt-8 max-w-prose text-body-lg text-muted-foreground">
-            <Bilingual
-              en={
-                <>
-                  Join our vibrant community in celebrating our heritage through festivals, gatherings, and
+            Join our vibrant community in celebrating our heritage through festivals, gatherings, and
                   educational programs that bring us together.
-                </>
-              }
-              gu={
-                <>
-                  ઉત્સવો, મેળાવડા અને શિક્ષણ કાર્યક્રમો દ્વારા અમારા વારસાની ઉજવણી કરવા અમારા જીવંત સમુદાયમાં જોડાઓ જે
-                  અમને એકસાથે લાવે છે.
-                </>
-              }
-            />
           </p>
         </Container>
       </PageSection>

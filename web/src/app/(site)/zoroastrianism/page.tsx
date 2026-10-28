@@ -4,7 +4,6 @@ import { PageSection } from "@/components/PageSection";
 import { Container } from "@/components/Container";
 import { FadeIn } from "@/components/FadeIn";
 import { FaravaharDivider } from "@/components/FaravaharDivider";
-import { Bilingual } from "@/contexts/LanguageContext";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
@@ -36,23 +35,11 @@ export default function ZoroastrianismPage() {
       <PageSection variant="muted">
         <Container className="text-center">
           <h1 className="font-serif text-display font-bold text-secondary">
-            <Bilingual en={<>Core Beliefs</>} gu={<>મૂળભૂત માન્યતાઓ</>} />
+            Core Beliefs
           </h1>
           <p className="mx-auto mt-8 max-w-prose text-body-lg text-muted-foreground">
-            <Bilingual
-              en={
-                <>
-                  Explore the fundamental principles and sacred teachings that form the foundation of one of the
+            Explore the fundamental principles and sacred teachings that form the foundation of one of the
                   world&apos;s oldest monotheistic religions.
-                </>
-              }
-              gu={
-                <>
-                  મૂળભૂત સિદ્ધાંતો અને પવિત્ર શિક્ષણોનું અન્વેષણ કરો જે વિશ્વના સૌથી પુરાતન એકેશ્વરવાદી ધર્મોમાંના એકનો પાયો
-                  બનાવે છે.
-                </>
-              }
-            />
           </p>
         </Container>
       </PageSection>

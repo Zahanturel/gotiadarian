@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Open_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
-import { LanguageProvider } from "@/contexts/LanguageContext";
 import { rootMetadataBase } from "@/lib/seo";
 import { absoluteUrl, DEFAULT_SITE_DESCRIPTION } from "@/lib/site";
 
@@ -36,8 +35,8 @@ export const metadata: Metadata = {
     url: absoluteUrl("/"),
     images: [
       {
-        url: absoluteUrl("/assets/faravahar.png"),
-        alt: "Faravahar symbol representing Zoroastrian heritage at Goti Adarian",
+        url: absoluteUrl("/assets/og-goti.jpg"),
+        alt: "Goti Adarian fire temple, Surat",
       },
     ],
   },
@@ -45,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Goti Adarian - Sacred Space for the Parsi-Zoroastrian Community",
     description: DEFAULT_SITE_DESCRIPTION,
-    images: [absoluteUrl("/assets/faravahar.png")],
+    images: [absoluteUrl("/assets/og-goti.jpg")],
   },
 };
 
@@ -65,9 +64,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         />
       </head>
-      <body className="font-sans">
-        <LanguageProvider>{children}</LanguageProvider>
-      </body>
+      <body className="font-sans">{children}</body>
     </html>
   );
 }
