@@ -1,0 +1,16 @@
+name = "goti-contact"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+
+# Public settings. Secrets are NOT stored here; set them with `wrangler secret put` (see README.md):
+#   RESEND_API_KEY, MAIL_TO, MAIL_CC
+[vars]
+MAIL_FROM = "Goti Adarian Website <no-reply@gotiadarian.com>"
+ALLOWED_ORIGIN = "https://gotiadarian.com"
+THANKS_URL = "https://gotiadarian.com/contact/thanks/"
+CONTACT_URL = "https://gotiadarian.com/contact/"
+
+# Rate limiting by IP. Create the namespace with `wrangler kv namespace create RATE`, then paste its id below.
+# [[kv_namespaces]]
+# binding = "RATE"
+# id = "PASTE_NAMESPACE_ID_HERE"
