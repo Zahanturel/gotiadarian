@@ -1,9 +1,13 @@
+import { CONTACT_ENDPOINT } from "@/lib/site";
+
 export function ContactForm() {
   return (
-    <form action="https://formsubmit.co/contact@gotiadarian.com" method="POST">
-      <input type="hidden" name="_subject" value="New Contact Message - Goti Adarian" />
-      <input type="hidden" name="_captcha" value="false" />
-      <input type="hidden" name="_next" value="https://gotiadarian.com/contact/thanks/" />
+    <form action={CONTACT_ENDPOINT} method="POST">
+      {/* Trap field: hidden from people, often filled in by bots. The handler drops posts that fill it. */}
+      <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
+        <label htmlFor="contactWebsite">Website</label>
+        <input type="text" id="contactWebsite" name="website" tabIndex={-1} autoComplete="off" />
+      </div>
 
       <div className="form-group">
         <label htmlFor="contactName">Name</label>

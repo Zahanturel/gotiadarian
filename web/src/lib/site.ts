@@ -14,3 +14,6 @@ export function absoluteUrl(pathname: string): string {
 
 export const MAP_URL =
   "https://www.google.com/maps/search/?api=1&query=Goti+Adarian%2C+Variyavi+Bhagol%2C+Variyadi+Bazar%2C+Dhastipura%2C+Sayedpura%2C+Surat%2C+Gujarat+395003";
+
+/** Where the contact form posts. A small Cloudflare Worker (worker/) that emails the message. */
+export const CONTACT_ENDPOINT = "https://goti-contact.turelzahan10.workers.dev/";
