@@ -7,8 +7,8 @@ export function FadeIn({
   children,
   className,
   delay = 0,
-  y = 8,
-  duration = 0.26,
+  y = 16,
+  duration = 0.7,
 }: {
   children: ReactNode;
   className?: string;

@@ -4,16 +4,16 @@ import { FadeIn } from "./FadeIn";
 
 const variants = {
   default: "bg-background",
-  muted: "bg-muted/60",
-  secondary: "bg-secondary text-secondary-foreground",
+  muted: "bg-sand",
+  secondary: "bg-secondary text-secondary-foreground on-dark",
 } as const;
 
 export function PageSection({
   children,
   variant = "default",
   className = "",
-  contained = true,
-  animate = true,
+  contained = false,
+  animate = false,
 }: {
   children: ReactNode;
   variant?: keyof typeof variants;
@@ -22,13 +22,7 @@ export function PageSection({
   animate?: boolean;
 }) {
   const inner = contained ? <Container>{children}</Container> : children;
-  const body = (
-    <section
-      className={`${variants[variant]} py-section ${className}`}
-    >
-      {inner}
-    </section>
-  );
+  const body = <section className={`${variants[variant]} py-section ${className}`}>{inner}</section>;
   if (!animate) return body;
   return <FadeIn>{body}</FadeIn>;
 }

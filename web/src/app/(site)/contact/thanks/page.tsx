@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { PageSection } from "@/components/PageSection";
-import { Container } from "@/components/Container";
-import { FaravaharDivider } from "@/components/FaravaharDivider";
+import { PageHeader } from "@/components/PageHeader";
 
 export const metadata: Metadata = {
   title: { absolute: "Message Sent - Goti Adarian" },
@@ -11,19 +10,21 @@ export const metadata: Metadata = {
 
 export default function ContactThanksPage() {
   return (
-    <PageSection variant="muted">
-      <Container className="text-center">
-        <FaravaharDivider />
-        <h1 className="font-serif text-display font-bold text-secondary">Thank You</h1>
-        <p className="mx-auto mt-8 max-w-prose text-body-lg text-muted-foreground">
-          Your message has been sent. We will get back to you as soon as we can. For anything urgent, please call
-          us on{" "}
-          <a href="tel:+917573013336" className="font-semibold text-secondary hover:text-primary">
-            +91 7573013336
-          </a>
-          .
-        </p>
-        <div className="mt-10 flex flex-wrap justify-center gap-4">
+    <PageHeader
+      title="Thank You"
+      before={
+        <span className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-background shadow-[inset_0_0_0_1px_hsl(36,29%,82%)]">
+          <Image
+            src="/assets/faravahar.png"
+            alt="Faravahar symbol, emblem of Zoroastrianism"
+            width={32}
+            height={32}
+            className="h-auto w-8"
+          />
+        </span>
+      }
+      after={
+        <div className="mt-10 flex flex-wrap gap-3">
           <Link href="/" className="btn btn-primary btn-lg">
             Back to Home
           </Link>
@@ -31,7 +32,16 @@ export default function ContactThanksPage() {
             Community Events
           </Link>
         </div>
-      </Container>
-    </PageSection>
+      }
+    >
+      Your message has been sent. We will get back to you as soon as we can. For anything urgent, please call us on{" "}
+      <a
+        href="tel:+917573013336"
+        className="font-semibold text-secondary underline-offset-4 transition-colors hover:text-gold-ink hover:underline"
+      >
+        +91 7573013336
+      </a>
+      .
+    </PageHeader>
   );
 }

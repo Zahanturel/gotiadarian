@@ -15,13 +15,12 @@
   h4 {
     @apply font-serif text-balance;
   }
-  button:focus-visible,
-  input:focus-visible,
-  select:focus-visible,
-  textarea:focus-visible,
-  a:focus-visible {
-    outline: 2px solid hsl(43, 59%, 52%);
+  :focus-visible {
+    outline: 2px solid hsl(214, 48%, 25%);
     outline-offset: 2px;
+  }
+  .on-dark :focus-visible {
+    outline-color: hsl(43, 72%, 70%);
   }
 }
 
@@ -58,83 +57,58 @@
   }
 }
 
-/* Button system — matches css/styles.css (static site) */
+/* Button, card and form system */
 @layer components {
   .btn {
-    @apply inline-flex cursor-pointer items-center justify-center gap-2 font-semibold no-underline;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
-    border: none;
-    font-size: 1rem;
-    white-space: nowrap;
-    transition: all 0.3s ease;
+    @apply inline-flex cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded font-semibold no-underline transition-colors;
+    min-height: 44px;
+    padding: 0 1.25rem;
+    font-size: 0.9375rem;
   }
   .btn-lg {
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
+    min-height: 52px;
+    padding: 0 1.75rem;
+    font-size: 1rem;
   }
   .btn-primary {
-    background-color: hsl(43, 59%, 52%);
-    color: hsl(214, 48%, 25%);
-  }
-  .btn-primary:hover {
-    background-color: hsl(214, 48%, 25%);
-    color: hsl(36, 39%, 96%);
-  }
-  .btn-secondary {
-    background-color: hsl(36, 39%, 96%);
-    color: hsl(214, 48%, 25%);
-    border: 2px solid hsl(36, 39%, 96%);
-  }
-  .btn-secondary:hover {
-    background-color: hsl(214, 48%, 25%);
-    color: hsl(36, 39%, 96%);
-  }
-  .btn-accent {
-    background-color: hsl(353, 100%, 25%);
-    color: hsl(36, 39%, 96%);
-  }
-  .btn-accent:hover {
-    background-color: hsl(214, 48%, 25%);
-    color: hsl(36, 39%, 96%);
+    @apply bg-primary text-secondary hover:bg-primary-hover active:bg-primary-press;
   }
   .btn-outline {
-    background-color: transparent;
-    border: 2px solid hsl(43, 59%, 52%);
-    color: hsl(43, 59%, 52%);
+    @apply border-[1.5px] border-gold-ink bg-transparent text-gold-ink hover:bg-gold-ink hover:text-background active:bg-gold-ink-press active:text-background;
   }
-  .btn-outline:hover {
-    background-color: hsl(43, 59%, 52%);
-    color: hsl(36, 39%, 96%);
+  .on-dark .btn-outline {
+    @apply border-background/40 text-background hover:border-primary hover:bg-transparent hover:text-gold-soft active:text-gold-soft;
   }
   .btn-full {
     @apply w-full;
   }
   .btn-phone {
-    background-color: hsl(36, 39%, 96%);
-    color: hsl(214, 48%, 25%);
-    border: 2px solid hsl(43, 59%, 52%);
-    border-radius: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
+    @apply border-2 border-primary bg-background text-secondary hover:bg-primary;
+    min-height: 48px;
+    padding: 0 1.5rem;
   }
-  .btn-phone:hover {
-    background-color: hsl(43, 59%, 52%);
-    color: hsl(214, 48%, 25%);
-  }
+  /* Cards: a fine inset line, no shadow, no hover. On cream sections use .surface-card; on sand use .surface-card-on-sand. */
   .surface-card {
-    @apply rounded-xl border border-border/65 bg-card shadow-card transition-[box-shadow,border-color] duration-[250ms] ease-out hover:border-border/90 hover:shadow-lift;
+    @apply rounded-panel bg-panel shadow-[inset_0_0_0_1px_theme(colors.panel-line)];
+  }
+  .surface-card-on-sand {
+    @apply rounded-panel bg-background shadow-[inset_0_0_0_1px_theme(colors.panel-line)];
   }
   .section-eyebrow {
-    @apply mb-3 text-center text-xs font-semibold uppercase tracking-[0.2em] text-primary/90;
+    @apply mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-gold-ink;
   }
   .form-group label {
-    @apply mb-1.5 block text-sm font-medium text-secondary;
+    @apply mb-1.5 block text-sm font-semibold text-secondary;
   }
   .form-group input,
   .form-group textarea {
-    @apply w-full rounded-lg border border-border bg-card px-3 py-2.5 text-foreground shadow-sm transition-colors duration-200 ease-out focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/25;
+    @apply w-full rounded-field border border-field-border bg-card px-3.5 py-3 text-base text-secondary transition-[border-color,box-shadow] focus:border-secondary focus:outline-none focus:shadow-[0_0_0_3px_hsla(214,48%,25%,0.18)];
+    min-height: 48px;
+  }
+  .form-group textarea {
+    min-height: 140px;
+    resize: vertical;
+    line-height: 1.6;
   }
 }
 

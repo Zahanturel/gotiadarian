@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { PageSection } from "@/components/PageSection";
 import { Container } from "@/components/Container";
 import { FadeIn } from "@/components/FadeIn";
-import { FaravaharDivider } from "@/components/FaravaharDivider";
+import { PageHeader } from "@/components/PageHeader";
+import { ClosingBand } from "@/components/ClosingBand";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
@@ -54,44 +54,56 @@ const festivals: (
   },
 ];
 
+const visiting = [
+  "Dress modestly and respectfully when visiting",
+  "Remove shoes before entering prayer areas",
+  "Maintain silence during prayer services",
+  "Follow guidance from temple priests and volunteers",
+];
+
+const participation = [
+  { icon: "fa-heart", text: "All community members are welcome to participate" },
+  { icon: "fa-hands-helping", text: "Volunteer opportunities are available for all ages" },
+  { icon: "fa-calendar", text: "Registration required for some special events" },
+  { icon: "fa-phone", text: "Contact us for questions or special accommodations" },
+];
+
+const h2 = "mb-[clamp(36px,4.5vw,56px)] font-serif text-title-lg font-normal text-secondary";
+const listItem = "flex items-baseline gap-3";
+
 export default function CommunityPage() {
   return (
     <>
-      <PageSection variant="muted">
-        <Container className="text-center">
-          <h1 className="font-serif text-display font-bold text-secondary">
-            Community Events
-          </h1>
-          <p className="mx-auto mt-8 max-w-prose text-body-lg text-muted-foreground">
-            Join our vibrant community in celebrating our heritage through festivals, gatherings, and
-                  educational programs that bring us together.
-          </p>
-        </Container>
-      </PageSection>
+      <PageHeader title="Community Events">
+        Join our vibrant community in celebrating our heritage through festivals, gatherings, and educational
+        programs that bring us together.
+      </PageHeader>
 
-      <PageSection>
+      <section aria-labelledby="fest-h" className="py-section">
         <Container>
-          <h2 className="mb-10 text-center font-serif text-title-lg font-semibold text-secondary">
-            Upcoming Festivals
-          </h2>
-          <div className="grid gap-8 md:grid-cols-2">
-            {festivals.map((f) => (
-              <FadeIn key={f.title}>
-                <div className="surface-card h-full p-8 md:p-9">
-                  <h3 className="font-serif text-xl font-semibold text-secondary">{f.title}</h3>
+          <FadeIn>
+            <h2 id="fest-h" className={h2}>
+              Upcoming Festivals
+            </h2>
+          </FadeIn>
+          <div className="grid gap-[clamp(20px,2.5vw,32px)] md:grid-cols-2">
+            {festivals.map((f, i) => (
+              <FadeIn key={f.title} delay={(i % 2) * 0.09} className="h-full">
+                <div className="surface-card flex h-full flex-col p-[clamp(24px,3.5vw,36px)]">
+                  <h3 className="font-serif text-title-md font-medium text-secondary">{f.title}</h3>
                   {"date" in f ? (
-                    <div className="mt-2 font-semibold text-primary">{f.date}</div>
+                    <div className="mt-2 text-small font-semibold text-gold-ink">{f.date}</div>
                   ) : (
                     f.dates.map((d) => (
-                      <div key={d} className="mt-2 font-semibold text-primary">
+                      <div key={d} className="mt-2 text-small font-semibold text-gold-ink">
                         {d}
                       </div>
                     ))
                   )}
-                  <p className="mt-3 text-muted-foreground">{f.desc}</p>
-                  <div className="mt-6 border-t border-border pt-6">
-                    <h4 className="mb-2 font-semibold text-primary">Activities:</h4>
-                    <ul className="text-sm text-foreground">
+                  <p className="mt-3 text-small text-muted-foreground">{f.desc}</p>
+                  <div className="mt-6 border-t border-panel-line pt-5">
+                    <h4 className="mb-2 font-sans text-sm font-semibold text-gold-ink">Activities:</h4>
+                    <ul className="flex list-none flex-col gap-1 p-0 text-sm leading-[1.6] text-secondary">
                       {f.activities.map((a) => (
                         <li key={a}>{a}</li>
                       ))}
@@ -102,71 +114,63 @@ export default function CommunityPage() {
             ))}
           </div>
         </Container>
-      </PageSection>
+      </section>
 
-      <PageSection variant="muted">
+      <section aria-labelledby="guide-h" className="bg-sand py-section">
         <Container>
-          <h2 className="mb-10 text-center font-serif text-title-lg font-semibold text-secondary">
-            Community Guidelines
-          </h2>
-          <div className="grid gap-12 md:grid-cols-2">
-            <div>
-              <h3 className="mb-6 font-serif text-xl font-semibold text-secondary">Visiting the Temple</h3>
-              <ul className="list-none space-y-4 p-0">
-                {[
-                  "Dress modestly and respectfully when visiting",
-                  "Remove shoes before entering prayer areas",
-                  "Maintain silence during prayer services",
-                  "Follow guidance from temple priests and volunteers",
-                ].map((t) => (
-                  <li key={t} className="flex gap-3">
-                    <i className="fas fa-check-circle mt-1 shrink-0 text-primary" />
+          <FadeIn>
+            <h2 id="guide-h" className={h2}>
+              Community Guidelines
+            </h2>
+          </FadeIn>
+          <div className="grid gap-x-[clamp(32px,5vw,64px)] gap-y-10 md:grid-cols-2">
+            <FadeIn>
+              <h3 className="mb-5 font-serif text-2xl font-medium leading-tight text-secondary">
+                Visiting the Temple
+              </h3>
+              <ul className="flex list-none flex-col gap-3.5 p-0 text-body text-secondary">
+                {visiting.map((t) => (
+                  <li key={t} className={listItem}>
+                    <i className="fas fa-check-circle w-[18px] shrink-0 text-center text-[15px] text-gold-ink" aria-hidden />
                     <span>{t}</span>
                   </li>
                 ))}
               </ul>
-            </div>
-            <div>
-              <h3 className="mb-6 font-serif text-xl font-semibold text-secondary">Community Participation</h3>
-              <ul className="list-none space-y-4 p-0">
-                {[
-                  { icon: "fa-heart", text: "All community members are welcome to participate" },
-                  { icon: "fa-hands-helping", text: "Volunteer opportunities are available for all ages" },
-                  { icon: "fa-calendar", text: "Registration required for some special events" },
-                  { icon: "fa-phone", text: "Contact us for questions or special accommodations" },
-                ].map((t) => (
-                  <li key={t.text} className="flex gap-3">
-                    <i className={`fas ${t.icon} mt-1 shrink-0 text-primary`} />
+            </FadeIn>
+            <FadeIn delay={0.09}>
+              <h3 className="mb-5 font-serif text-2xl font-medium leading-tight text-secondary">
+                Community Participation
+              </h3>
+              <ul className="flex list-none flex-col gap-3.5 p-0 text-body text-secondary">
+                {participation.map((t) => (
+                  <li key={t.text} className={listItem}>
+                    <i className={`fas ${t.icon} w-[18px] shrink-0 text-center text-[15px] text-gold-ink`} aria-hidden />
                     <span>{t.text}</span>
                   </li>
                 ))}
               </ul>
-            </div>
+            </FadeIn>
           </div>
         </Container>
-      </PageSection>
+      </section>
 
-      <PageSection variant="secondary">
-        <Container className="text-center">
-          <FaravaharDivider />
-          <h2 className="mb-6 font-serif text-title-lg font-semibold">Join Our Community</h2>
-          <p className="mx-auto mb-10 max-w-2xl text-body-lg text-secondary-foreground/95">
-            Whether you&apos;re a lifelong member or new to our community, there&apos;s a place for you at Goti
-            Adarian.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
+      <ClosingBand
+        id="close-h"
+        title="Join Our Community"
+        actions={
+          <>
             <Link href="/contact" className="btn btn-primary btn-lg">
               Get Involved
             </Link>
-            <Link
-              href="/contact"
-              className="btn btn-outline btn-lg border-secondary-foreground/40 text-secondary-foreground hover:border-primary hover:text-primary"
-            >
+            <Link href="/contact" className="btn btn-outline btn-lg">
               Contact Us
             </Link>
-          </div>
-        </Container>
-      </PageSection>
+          </>
+        }
+      >
+        Whether you&apos;re a lifelong member or new to our community, there&apos;s a place for you at Goti
+        Adarian.
+      </ClosingBand>
     </>
   );
 }

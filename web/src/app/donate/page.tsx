@@ -1,4 +1,5 @@
 import { Container } from "@/components/Container";
+import { PageHeader } from "@/components/PageHeader";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
@@ -11,20 +12,10 @@ export const metadata = buildPageMetadata({
 export default function DonatePage() {
   return (
     <>
-      <section
-        className="border-b border-white/10 py-[clamp(3rem,8vw,6rem)]"
-        aria-labelledby="donate-hero-heading"
-      >
-        <Container className="text-center">
-          <h1 id="donate-hero-heading" className="font-serif text-display font-bold">
-            Support Our Mission
-          </h1>
-          <p className="mx-auto mt-8 max-w-prose text-body-lg text-accent-foreground/95">
-            Help us preserve the sacred fire and ancient traditions of the Parsi-Zoroastrian community for
-            future generations.
-          </p>
-        </Container>
-      </section>
+      <PageHeader theme="donate" id="donate-hero-heading" title="Support Our Mission">
+        Help us preserve the sacred fire and ancient traditions of the Parsi-Zoroastrian community for future
+        generations.
+      </PageHeader>
 
       <section
         className="border-b border-white/10 bg-white/10 py-section backdrop-blur-sm"

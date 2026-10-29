@@ -10,17 +10,17 @@ export function ContactForm() {
         <input type="text" id="contactName" name="name" required />
       </div>
 
-      <div className="form-group mt-4">
+      <div className="form-group mt-5">
         <label htmlFor="contactEmail">Email</label>
         <input type="email" id="contactEmail" name="email" required />
       </div>
 
-      <div className="form-group mt-4">
+      <div className="form-group mt-5">
         <label htmlFor="contactSubject">Subject</label>
         <input type="text" id="contactSubject" name="subject" required />
       </div>
 
-      <div className="form-group mt-4">
+      <div className="form-group mt-5">
         <label htmlFor="contactMessage">Message</label>
         <textarea id="contactMessage" name="message" rows={5} required />
       </div>
