@@ -183,7 +183,7 @@ export default function AboutPage() {
                   </p>
                   <p>
                     The Turel family (originally known as &quot;Velati&quot;) has served as the Panthakis (priests
-                    and caretakers) of the Adarian for seven generations. Their dedication—especially during
+                    and caretakers) of the Adarian for eight generations. Their dedication—especially during
                     floods, when they protected and relocated the sacred fire to safety—has been recorded with
                     reverence. The family&apos;s lineage of priests includes Ervad Rustamji, Ervad Jamasji, Ervad
                     Khurshedji, Ervad Dadabhai, Ervad Dorabji, Ervad Nariman, Ervad Jamshedji, and Ervad Parvez,
