@@ -3,14 +3,16 @@ main = "src/index.ts"
 compatibility_date = "2025-01-01"
 
 # Public settings. Secrets are NOT stored here; set them with `wrangler secret put` (see README.md):
-#   RESEND_API_KEY, MAIL_TO, MAIL_CC
+#   SMTP_PASS, MAIL_TO, MAIL_CC
 [vars]
-MAIL_FROM = "Goti Adarian Website <no-reply@gotiadarian.com>"
+SMTP_HOST = "smtp.titan.email"
+SMTP_PORT = "465"
+SMTP_USER = "contact@gotiadarian.com"
 ALLOWED_ORIGIN = "https://gotiadarian.com"
 THANKS_URL = "https://gotiadarian.com/contact/thanks/"
 CONTACT_URL = "https://gotiadarian.com/contact/"
 
-# Rate limiting by IP. Create the namespace with `wrangler kv namespace create RATE`, then paste its id below.
-# [[kv_namespaces]]
-# binding = "RATE"
-# id = "PASTE_NAMESPACE_ID_HERE"
+# Rate limiting by IP (5 messages per hour). Namespace created with `wrangler kv namespace create RATE`.
+[[kv_namespaces]]
+binding = "RATE"
+id = "deb7cf8eb3f842858df1e09f078c6850"

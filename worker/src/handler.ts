@@ -1,8 +1,10 @@
 /**
  * Contact form handler for gotiadarian.com.
- * Receives the plain HTML form post, checks it, emails it through Resend, then redirects the visitor.
+ * Receives the plain HTML form post, checks it, emails it through the temple's own mailbox over SMTP, then redirects the visitor.
  * No secrets live in this file: they come from the Worker's settings (see wrangler.toml).
  */
+
+import type { Mail } from "./smtp.ts";
 
 export interface KV {
   get(key: string): Promise<string | null>;
@@ -10,14 +12,18 @@ export interface KV {
 }
 
 export interface Env {
-  /** Secret. Resend API key. */
-  RESEND_API_KEY: string;
+  /** Var. Mail server, e.g. "smtp.titan.email". */
+  SMTP_HOST: string;
+  /** Var. 465 (implicit TLS) or 587 (STARTTLS). */
+  SMTP_PORT: string;
+  /** Var. Mailbox the message is sent from; also the SMTP login. */
+  SMTP_USER: string;
+  /** Secret. Password of that mailbox. */
+  SMTP_PASS: string;
   /** Secret. Main recipient (the temple's contact address). */
   MAIL_TO: string;
   /** Secret, optional. Second recipient. */
   MAIL_CC?: string;
-  /** Var. Verified sender, e.g. "Goti Adarian Website <no-reply@gotiadarian.com>". */
-  MAIL_FROM: string;
   /** Var. Only posts from this origin are accepted, e.g. "https://gotiadarian.com". */
   ALLOWED_ORIGIN: string;
   /** Var. Where to send the visitor after a successful message. */
@@ -34,10 +40,12 @@ const RATE_WINDOW_SECONDS = 3600; // per hour
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
-type FetchFn = (input: string, init?: RequestInit) => Promise<Response>;
+/** Sends one message. In production this is the SMTP sender; tests pass a stub. */
+export type SendFn = (mail: Mail) => Promise<void>;
 
 function oneLine(value: string): string {
-  return value.replace(/[\r\n\u2028\u2029]+/g, " ").trim();
+  const separators = new RegExp("[" + "\\r\\n" + String.fromCharCode(0x2028, 0x2029) + "]+", "g");
+  return value.replace(separators, " ").trim();
 }
 
 function errorPage(status: number, contactUrl: string): Response {
@@ -81,7 +89,7 @@ async function overRateLimit(env: Env, ip: string): Promise<boolean> {
   return false;
 }
 
-export async function handle(request: Request, env: Env, fetchFn: FetchFn = fetch): Promise<Response> {
+export async function handle(request: Request, env: Env, send: SendFn): Promise<Response> {
   if (request.method !== "POST") {
     return new Response("Method not allowed", { status: 405, headers: { allow: "POST" } });
   }
@@ -121,30 +129,21 @@ export async function handle(request: Request, env: Env, fetchFn: FetchFn = fetc
   if (await overRateLimit(env, ip)) return errorPage(429, env.CONTACT_URL);
 
   const to = [env.MAIL_TO, env.MAIL_CC].filter((a): a is string => Boolean(a && a.trim()));
-  const text = `New message from the website contact form\n\nName: ${name}\nEmail: ${email}\nSubject: ${subject}\n\n${message}\n`;
+  const text = [
+    "New message from the website contact form",
+    "",
+    `Name: ${name}`,
+    `Email: ${email}`,
+    `Subject: ${subject}`,
+    "",
+    message,
+    "",
+  ].join("\n");
 
-  let response: Response;
   try {
-    response = await fetchFn("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        authorization: `Bearer ${env.RESEND_API_KEY}`,
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({
-        from: env.MAIL_FROM,
-        to,
-        reply_to: email,
-        subject: `[Website] ${subject}`,
-        text,
-      }),
-    });
-  } catch {
-    console.error("contact: could not reach the email service");
-    return errorPage(502, env.CONTACT_URL);
-  }
-  if (!response.ok) {
-    console.error(`contact: email service answered ${response.status}`);
+    await send({ fromName: "Goti Adarian Website", to, replyTo: email, subject: `[Website] ${subject}`, text });
+  } catch (error) {
+    console.error("contact: could not send the message", error instanceof Error ? error.message : "unknown");
     return errorPage(502, env.CONTACT_URL);
   }
   return redirect(env.THANKS_URL);
