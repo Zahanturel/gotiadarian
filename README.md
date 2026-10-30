@@ -10,7 +10,7 @@ It is a community project, maintained by volunteers.
 
 ## Tech
 
-Next.js (static export) + Tailwind CSS, in `web/`. Hosted on Cloudflare Pages (project `gotiadarian`): every push to `main` builds `web/` and publishes `web/out`. To publish `main` by hand: `cf pages projects deployments create gotiadarian --branch main`. A Cloudflare Redirect Rule sends `www` to the main address.
+Next.js (static export) + Tailwind CSS, in `web/`. Hosted on Cloudflare Pages (project `gotiadarian`): every push to `main` builds `web/` and publishes `web/out`. To publish `main` by hand: `cf pages projects deployments create gotiadarian --branch main`. A Cloudflare Redirect Rule sends `www` to the main address. The contact form is a separate Worker, in `worker/`, deployed on its own.
 
 ## Running locally
 
