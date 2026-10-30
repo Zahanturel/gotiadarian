@@ -10,7 +10,7 @@ It is a community project, maintained by volunteers.
 
 ## Tech
 
-Next.js (static export) + Tailwind CSS, in `web/`. Deployed to GitHub Pages by `.github/workflows/nextjs.yml`.
+Next.js (static export) + Tailwind CSS, in `web/`. Hosted on Cloudflare Pages (project `gotiadarian`): every push to `main` builds `web/` and publishes `web/out`.
 
 ## Running locally
 
